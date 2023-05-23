@@ -1,7 +1,7 @@
 ## Bash入门
 
-- [第一个shell脚本](recipe-01)
-- [Shell 变量](recipe-02)
-- [Shell 字符串](recipe-03)
-- [Shell数组](recipe-04)
-- [Shell 传递参数](recipe-05)
+- [第一个shell脚本](hello_world)
+- [Shell 变量](variables)
+- [Shell 字符串](strings)
+- [Shell 数组](arrays)
+- [Shell 传递参数](arguments)
