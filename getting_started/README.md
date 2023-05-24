@@ -5,3 +5,4 @@
 - [Shell 字符串](strings)
 - [Shell 数组](arrays)
 - [Shell 传递参数](arguments)
+- [Shell 运算符](operators)
