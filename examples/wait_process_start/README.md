@@ -19,9 +19,16 @@ not found nosuch
 
 示例2：
 ```
-$ sleep 30 &
-[1] 18853
-$ ./wait_process_start.sh -p sleep
-process_count: 1
-found sleep, count 1
+$ sleep 10 && ./test.sh &>/dev/null &
+$ ./wait_process_start.sh -p "test.sh" -t 60
+count: 0
+count: 0
+count: 0
+count: 0
+count: 0
+count: 0
+count: 0
+count: 0
+count: 1
+found test.sh, count 1
 ```
