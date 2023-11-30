@@ -128,6 +128,15 @@ test 命令和测试条件可以判断 3 类条件。
 | file1 -nt file2 | 检查 file1 是否比 file2 新               |
 | file1 -ot file2 | 检查 file1 是否比 file2 旧               |
 
+我们也可以将表达式组合起来，来创建更复杂的计算。表达式是使用逻辑运算符组合起来的。
+与test命令配套的逻辑运算符有三个，它们是AND、OR和NOT。
+
+| 运算符 | 描 述 |
+| ------ | ----- |
+| -a     | AND   |
+| -o     | OR    |
+| !      | NOT   |
 
 ### 参考资料:
 - 《Linux Command Line and Shell Scripting Bible》: Chapter 12: Using Structured Commands
+- 《UNIX Shells by Example》: 14.5.6 File Testing, EXAMPLE 14.25
