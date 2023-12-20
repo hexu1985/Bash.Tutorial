@@ -11,3 +11,11 @@
 - [Shell 运算符](getting_started/operators)
 - [Shell echo命令](getting_started/echo_command)
 - [Shell 输入/输出重定向](getting_started/input_output_redirection)
+
+
+### [流程控制](flow_control)
+- [if/else语句](flow_control/if_else)
+- [test命令](flow_control/test_command)
+- [控制运算符（&&和||）](flow_control/control_operators)
+- [null命令](flow_control/null_command)
+
