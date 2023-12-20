@@ -61,6 +61,16 @@ fi
 当if语句中的命令返回退出状态码0时，then部分中的命令会被执行，这跟普通的if-then语句一样。
 当if语句中的命令返回非零退出状态码时，bash shell会执行else部分中的命令。
 
+例如：
+
+```bash
+x=5
+if [ $x = 5 ]; then
+    echo "x equals 5."
+else
+    echo "x does not equal 5."
+fi
+```
 
 **嵌套 if**
 
@@ -102,7 +112,33 @@ fi
 每块命令都会根据命令是否会返回退出状态码0来执行。记住，bash shell会依次执行if语句，
 只有第一个返回退出状态码0的语句中的then部分会被执行。
 
+例如：
+
+```bash
+#!/bin/bash
+OS=`uname -s`
+
+if [ "$OS" = "FreeBSD" ]; then
+  echo "This Is FreeBSD"
+elif [ "$OS" = "CYGWIN_NT-5.1" ]; then
+  echo "This is Cygwin"
+elif [ "$OS" = "SunOS" ]; then
+  echo "This is Solaris"
+elif [ "$OS" = "Darwin" ]; then
+  echo "This is Mac OSX"
+elif [ "$OS" = "AIX" ]; then
+  echo "This is AIX"
+elif [ "$OS" = "Minix" ]; then
+  echo "This is Minix"
+elif [ "$OS" = "Linux" ]; then
+  echo "This is Linux"
+else
+  echo "Failed to identify this OS"
+fi
+```
 
 ### 参考资料:
 - 《Linux Command Line and Shell Scripting Bible》: Chapter 12: Using Structured Commands
+- 《The Linux Command Line》: 27 Flow Control: Branching with if
+- 《Shell Scripting Expert Recipes》: 5 Conditional Execution
 
