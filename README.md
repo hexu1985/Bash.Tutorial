@@ -15,7 +15,8 @@
 
 ### [流程控制](flow_control)
 - [if/else语句](flow_control/if_else)
+- [返回码](flow_control/return_codes)
 - [test命令](flow_control/test_command)
-- [控制运算符（&&和||）](flow_control/control_operators)
 - [null命令](flow_control/null_command)
+- [复合条件测试](flow_control/compound_testing)
 
