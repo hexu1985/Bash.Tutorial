@@ -19,4 +19,7 @@
 - [test命令](flow_control/test_command)
 - [null命令](flow_control/null_command)
 - [复合条件测试](flow_control/compound_testing)
+- [if-then的高级特性](flow_control/advanced_if_then_features)
+- [case命令](flow_control/case_command)
+
 
