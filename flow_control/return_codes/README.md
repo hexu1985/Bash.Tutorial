@@ -37,7 +37,6 @@ then
 fi
 if  [ $1 -lt 0 -o $1 -gt 30 ]
 then
-
 	echo "mdays is out of range"
 	exit 2
 fi
