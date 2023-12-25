@@ -13,7 +13,7 @@
 - [Shell 输入/输出重定向](getting_started/input_output_redirection)
 
 
-### [流程控制](flow_control)
+### [流程控制：分支语句](flow_control_branching_with_if)
 - [if/else语句](flow_control/if_else)
 - [返回码](flow_control/return_codes)
 - [test命令](flow_control/test_command)
@@ -22,4 +22,5 @@
 - [if-then的高级特性](flow_control/advanced_if_then_features)
 - [case命令](flow_control/case_command)
 
+### [流程控制：循环语句](flow_control_using_loops)
 
