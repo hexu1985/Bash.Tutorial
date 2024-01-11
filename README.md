@@ -14,13 +14,14 @@
 
 
 ### [流程控制：分支语句](flow_control_branching_with_if)
-- [if/else语句](flow_control/if_else)
-- [返回码](flow_control/return_codes)
-- [test命令](flow_control/test_command)
-- [null命令](flow_control/null_command)
-- [复合条件测试](flow_control/compound_testing)
-- [if-then的高级特性](flow_control/advanced_if_then_features)
-- [case命令](flow_control/case_command)
+- [if/else语句](flow_control_branching_with_if/if_else)
+- [返回码](flow_control_branching_with_if/return_codes)
+- [test命令](flow_control_branching_with_if/test_command)
+- [null命令](flow_control_branching_with_if/null_command)
+- [复合条件测试](flow_control_branching_with_if/compound_testing)
+- [if-then的高级特性](flow_control_branching_with_if/advanced_if_then_features)
+- [case命令](flow_control_branching_with_if/case_command)
 
 ### [流程控制：循环语句](flow_control_using_loops)
+- [for命令](flow_control_using_loops/for_commands)
 
