@@ -90,6 +90,29 @@ $list 变量包含了用于迭代的值列表。
 然后在 for 命令中使用该命令的输出：
 
 ```bash
+$ cat for-loop-use-seq.sh
+#!/bin/bash
+
+for i in $(seq 1 10)
+do
+	echo "The next number is: $i"
+done
+$ ./for-loop-use-seq.sh
+The next number is: 1
+The next number is: 2
+The next number is: 3
+The next number is: 4
+The next number is: 5
+The next number is: 6
+The next number is: 7
+The next number is: 8
+The next number is: 9
+The next number is: 10
+```
+
+这个例子在命令替换中使用 seq 命令来生成1-10的数字数组。 
+
+```bash
 $ cat test5
 #!/bin/bash
 # reading values from a file
