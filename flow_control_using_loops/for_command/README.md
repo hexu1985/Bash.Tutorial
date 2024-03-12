@@ -31,13 +31,17 @@ do 语句和 done 语句之间的 commands 可以是一个或多个标准的 bas
 for 命令最基本的用法是遍历其自身所定义的一系列值：
 
 ```bash
-$ cat test1
 #!/bin/bash
 # basic for command
 for test in Alabama Alaska Arizona Arkansas California Colorado
 do
     echo The next state is $test
 done
+```
+
+执行脚本，输出结果如下所示：
+
+```bash
 $ ./test1
 The next state is Alabama
 The next state is Alaska
@@ -45,7 +49,6 @@ The next state is Arizona
 The next state is Arkansas
 The next state is California
 The next state is Colorado
-$
 ```
 
 每次遍历值列表时，for 命令会将列表中的下一个值赋给$test 变量。$test 变量可以像
@@ -63,7 +66,6 @@ for 命令语句中的其他脚本变量一样使用。
 该变量中的整个值列表。可以通过 for 命令完成这个任务：
 
 ```bash
-$ cat test4
 #!/bin/bash
 # using a variable to hold the list
 list="Alabama Alaska Arizona Arkansas Colorado"
@@ -72,6 +74,11 @@ for state in $list
 do
     echo "Have you ever visited $state?"
 done
+```
+
+执行脚本，输出结果如下所示：
+
+```bash
 $ ./test4
 Have you ever visited Alabama?
 Have you ever visited Alaska?
@@ -79,7 +86,6 @@ Have you ever visited Arizona?
 Have you ever visited Arkansas?
 Have you ever visited Colorado?
 Have you ever visited Connecticut?
-$
 ```
 
 $list 变量包含了用于迭代的值列表。
@@ -89,14 +95,20 @@ $list 变量包含了用于迭代的值列表。
 生成值列表的另一种途径是使用命令的输出。你可以用命令替换来执行任何能产生输出的命令，
 然后在 for 命令中使用该命令的输出：
 
+下面这个例子在命令替换中使用 seq 命令来生成1-10的数字数组：
+
 ```bash
-$ cat for-loop-use-seq.sh
 #!/bin/bash
 
 for i in $(seq 1 10)
 do
 	echo "The next number is: $i"
 done
+```
+
+执行脚本，输出结果如下所示：
+
+```bash
 $ ./for-loop-use-seq.sh
 The next number is: 1
 The next number is: 2
@@ -110,18 +122,11 @@ The next number is: 9
 The next number is: 10
 ```
 
-这个例子在命令替换中使用 seq 命令来生成1-10的数字数组。 
+下面这个例子在命令替换中使用 cat 命令来输出文件 states.txt 的内容。
 
-```bash
-$ cat test5
-#!/bin/bash
-# reading values from a file
-file="states.txt"
-for state in $(cat $file)
-do
-    echo "Visit beautiful $state"
-done
-$ cat states.txt
+states.txt如下：
+
+```
 Alabama
 Alaska
 Arizona
@@ -131,6 +136,23 @@ Connecticut
 Delaware
 Florida
 Georgia
+```
+
+bash脚本如下：
+
+```bash
+#!/bin/bash
+# reading values from a file
+file="states.txt"
+for state in $(cat $file)
+do
+    echo "Visit beautiful $state"
+done
+```
+
+执行脚本，输出结果如下所示：
+
+```bash
 $ ./test5
 Visit beautiful Alabama
 Visit beautiful Alaska
@@ -141,10 +163,7 @@ Visit beautiful Connecticut
 Visit beautiful Delaware
 Visit beautiful Florida
 Visit beautiful Georgia
-$
 ```
-
-这个例子在命令替换中使用 cat 命令来输出文件 states.txt 的内容。
 
 注意，states.txt 文件中每个值各占一行，而不是以空格分隔。
 前面我们知道for 命令使用空格来划分列表中的每个值。
@@ -183,8 +202,9 @@ IFS=$'\n:;"'
 
 在处理目录中的文件时，如果不知道所有的文件名，上述特性是非常好用的：
 
+下面这个例子中，for 命令会遍历/home/rich/test/*匹配的结果：
+
 ```bash
-$ cat test6
 #!/bin/bash
 # iterate through all the files in a directory
 for file in /home/rich/test/*
@@ -197,6 +217,11 @@ do
         echo "$file is a file"
     fi
 done
+```
+
+执行脚本，输出结果如下所示：
+
+```bash
 $ ./test6
 /home/rich/test/dir1 is a directory
 /home/rich/test/myprog.c is a file
@@ -209,11 +234,7 @@ $ ./test6
 /home/rich/test/testing is a file
 /home/rich/test/testprog is a file
 /home/rich/test/testprog.c is a file
-$
 ```
-
-for 命令会遍历/home/rich/test/*匹配的结果。
-
 
 ### 参考资料:
 - 《Linux Command Line and Shell Scripting Bible》: Chapter 13: More Structured Commands
