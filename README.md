@@ -24,6 +24,7 @@
 
 ### [流程控制：循环语句](flow_control_using_loops)
 - [for命令](flow_control_using_loops/for_command)
+- [while命令](flow_control_using_loops/while_command)
 
 ### [进程管理](managing_processes)
 - [结束进程](managing_processes/stopping_processes)
