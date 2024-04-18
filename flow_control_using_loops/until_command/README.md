@@ -79,5 +79,5 @@ $
 shell 会执行指定的多个测试命令，仅当最后一个命令成立时才停止。
 
 ### 参考资料:
-- 《The Linux Command Line》: 29. Flow Control: Looping with while/until
+- 《The Linux Command Line: A Complete Introduction》: 29. Flow Control: Looping with while/until
 - 《Linux Command Line and Shell Scripting Bible》: Chapter 13: More Structured Commands

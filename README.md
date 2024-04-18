@@ -35,5 +35,6 @@
 
 ### [命令的使用](working_with_commands)
 - [命令的种类](working_with_commands/kinds_of_commands)
+- [识别命令](working_with_commands/identifying_commands)
 
 

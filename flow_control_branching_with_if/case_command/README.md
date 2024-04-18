@@ -155,7 +155,7 @@ esac
 
 
 ### 参考资料:
-- 《The Linux Command Line》: 27. Flow Control: Branching with if - Control Operators: Another Way to Branch
+- 《The Linux Command Line: A Complete Introduction》: 27. Flow Control: Branching with if - Control Operators: Another Way to Branch
 - 《Linux Command Line and Shell Scripting Bible》: Chapter 12: Using Structured Commands - Considering Compound Testing
 - 《Shell Scripting Expert Recipes》: 5 Conditional Execution
 - 《UNIX Shells by Example》: 8.5.9 The case Command

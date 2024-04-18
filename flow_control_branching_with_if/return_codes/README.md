@@ -114,6 +114,6 @@ $
 ```
 
 ### 参考资料:
-- 《The Linux Command Line》: 27 Flow Control: Branching with if
+- 《The Linux Command Line: A Complete Introduction》: 27 Flow Control: Branching with if
 - 《UNIX Shells by Example》: Chapter 12: The exit Command and the ? Variable
 

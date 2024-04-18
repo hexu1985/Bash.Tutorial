@@ -14,3 +14,7 @@
 
 - alias命令。
     我们可以在其他命令的基础上定义自己的命令。
+
+
+### 参考资料:
+- 《The Linux Command Line: A Complete Introduction》: Chapter 5: Working with Commands

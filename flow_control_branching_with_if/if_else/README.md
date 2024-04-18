@@ -139,6 +139,6 @@ fi
 
 ### 参考资料:
 - 《Linux Command Line and Shell Scripting Bible》: Chapter 12: Using Structured Commands
-- 《The Linux Command Line》: 27 Flow Control: Branching with if
+- 《The Linux Command Line: A Complete Introduction》: 27 Flow Control: Branching with if
 - 《Shell Scripting Expert Recipes》: 5 Conditional Execution
 

@@ -159,5 +159,5 @@ Distro: Ubuntu	Version: 8.10	Released: 10/30/2008
 
 
 ### 参考资料:
-- 《The Linux Command Line》: 29. Flow Control: Looping with while/until
+- 《The Linux Command Line: A Complete Introduction》: 29. Flow Control: Looping with while/until
 - 《Linux Command Line and Shell Scripting Bible》: Chapter 13: More Structured Commands
