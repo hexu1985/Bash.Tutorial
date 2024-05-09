@@ -29,6 +29,7 @@
 - [until命令](flow_control_using_loops/until_command)
 - [break命令](flow_control_using_loops/break_command)
 - [continue命令](flow_control_using_loops/continue_command)
+- [处理循环的输出](flow_control_using_loops/processing_the_output_of_a_loop)
 
 
 ### [进程管理](managing_processes)
