@@ -32,12 +32,16 @@
 - [处理循环的输出](flow_control_using_loops/processing_the_output_of_a_loop)
 
 
+### [创建函数](creating_functions)
+- [脚本函数基础](creating_functions/basic_script_functions)
+
+
 ### [进程管理](managing_processes)
 - [结束进程](managing_processes/stopping_processes)
+
 
 ### [命令的使用](working_with_commands)
 - [命令的种类](working_with_commands/kinds_of_commands)
 - [识别命令](working_with_commands/identifying_commands)
 - [获得命令文档](working_with_commands/getting_command_documentation)
-
 
