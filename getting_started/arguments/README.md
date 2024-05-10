@@ -96,3 +96,7 @@ $ ./test.sh 1 2 3
 2
 3
 ```
+
+
+### 参考资料:
+- [菜鸟教程 - shell 教程](https://www.runoob.com/linux/linux-shell.html)

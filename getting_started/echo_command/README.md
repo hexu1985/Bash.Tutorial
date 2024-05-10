@@ -112,3 +112,7 @@ echo string
     ```
     Thu Jul 24 10:08:46 CST 2014
     ```
+
+
+### 参考资料:
+- [菜鸟教程 - shell 教程](https://www.runoob.com/linux/linux-shell.html)

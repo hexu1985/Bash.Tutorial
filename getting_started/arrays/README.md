@@ -229,3 +229,7 @@ $ ./test.sh
 数组元素个数为: 4
 数组元素个数为: 4
 ```
+
+
+### 参考资料:
+- [菜鸟教程 - shell 教程](https://www.runoob.com/linux/linux-shell.html)

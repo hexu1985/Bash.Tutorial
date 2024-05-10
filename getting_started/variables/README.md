@@ -129,3 +129,7 @@ echo $myUrl
 3. shell变量 shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，
    这些变量保证了shell的正常运行
 
+
+
+### 参考资料:
+- [菜鸟教程 - shell 教程](https://www.runoob.com/linux/linux-shell.html)

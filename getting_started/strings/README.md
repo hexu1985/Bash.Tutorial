@@ -86,3 +86,8 @@ echo `expr index "$string" io`  # 输出 4
 ```
 
 注意： 以上脚本中 \` 是反引号，而不是单引号 '，不要看错了哦。
+
+
+
+### 参考资料:
+- [菜鸟教程 - shell 教程](https://www.runoob.com/linux/linux-shell.html)

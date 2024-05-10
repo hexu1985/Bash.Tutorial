@@ -58,3 +58,5 @@ echo "Hello World !"
 ##### 用户配置区 结束  #####
 ```
 
+### 参考资料:
+- [菜鸟教程 - shell 教程](https://www.runoob.com/linux/linux-shell.html)

@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-### [Bash入门](getting_started)
+### [Bash概览](getting_started)
 - [第一个shell脚本](getting_started/hello_world)
 - [Shell 变量](getting_started/variables)
 - [Shell 字符串](getting_started/strings)
@@ -11,6 +11,11 @@
 - [Shell 运算符](getting_started/operators)
 - [Shell echo命令](getting_started/echo_command)
 - [Shell 输入/输出重定向](getting_started/input_output_redirection)
+- [Shell 流程控制](getting_started/flow_control)
+
+
+## [使用变量](using_variables)
+- [环境变量](using_variables/environment_variables)
 
 
 ### [流程控制：分支语句](flow_control_branching_with_if)

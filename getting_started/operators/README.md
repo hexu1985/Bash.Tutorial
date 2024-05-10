@@ -435,3 +435,7 @@ else
    echo "文件不存在"
 fi
 ```
+
+
+### 参考资料:
+- [菜鸟教程 - shell 教程](https://www.runoob.com/linux/linux-shell.html)
