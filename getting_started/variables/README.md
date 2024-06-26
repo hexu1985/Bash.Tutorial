@@ -1,5 +1,13 @@
 ### 变量
 
+所有的编程语言都利用变量来存放数据，以备随后使用或修改。
+和编译型语言不同，大多数脚本语言不要求在创建变量之前声明其类型。
+用到什么类型就是什么类型。在变量名前面加上一个美元符号就可以访问到变量的值。
+shell定义了一些变量，用于保存用到的配置信息，比如可用的打印机、搜索路径等。这些变量叫作环境变量。
+
+变量名由一系列字母、数字和下划线组成，其中不包含空白字符。
+常用的惯例是在脚本中使用大写字母命名环境变量，使用驼峰命名法或小写字母命名其他变量。
+
 **定义变量**
 
 定义变量时，变量名不加美元符号（`$`），如：
@@ -129,6 +137,46 @@ echo $myUrl
 3. shell变量 shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，
    这些变量保证了shell的正常运行
 
+**环境变量**
+
+所有的应用程序和脚本都可以访问环境变量。可以使用env或printenv命令查看当前shell中所定义的全部环境变量：
+
+```bash
+$ env
+PWD=/home/clif/ShellCookBook
+HOME=/home/clif
+SHELL=/bin/bash
+# …… 其他行
+```
+
+要查看其他进程的环境变量，可以使用如下命令：
+
+```bash
+cat /proc/$PID/environ
+```
+
+其中，PID是相关进程的进程ID（PID是一个整数）。
+
+export命令声明了将由子进程所继承的一个或多个变量。
+这些变量被导出后，当前shell脚本所执行的任何应用程序都会获得这个变量。
+shell创建并用到了很多标准环境变量，我们也可以导出自己的环境变量。
+
+如果需要在PATH中添加一条新路径，可以使用如下命令：
+
+```bash
+export PATH="$PATH:/home/user/bin"
+```
+
+也可以使用
+
+```bash
+$ PATH="$PATH:/home/user/bin"
+$ export PATH
+$ echo $PATH
+/home/slynux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/user/bin
+```
+
+这样，我们就将/home/user/bin添加到了PATH中。
 
 
 ### 参考资料:
