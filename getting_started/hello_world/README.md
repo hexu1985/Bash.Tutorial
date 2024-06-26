@@ -67,3 +67,4 @@ bash将以#符号开头的行视为注释。脚本中只有第一行可以使用
 
 ### 参考资料:
 - [菜鸟教程 - shell 教程](https://www.runoob.com/linux/linux-shell.html)
+- 《Linux Shell脚本攻略 第3版》: 1.2 在终端中显示输出
