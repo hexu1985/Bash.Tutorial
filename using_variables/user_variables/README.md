@@ -45,5 +45,5 @@ Jessica checked in 5 days ago
 
 
 ### 参考资料:
-- 《Linux Command Line and Shell Scripting Bible》: Chapter 11: Basic Script Building
+- 《Linux命令行与shell脚本编程大全（第4版）》: 11.4.2 用户自定义变量
 
