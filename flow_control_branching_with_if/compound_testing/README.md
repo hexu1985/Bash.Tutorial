@@ -1,12 +1,15 @@
 ### 复合条件测试
 
-if-then 语句允许使用布尔逻辑将测试条件组合起来。可以使用以下两种布尔运算符。
+if-then 语句允许使用布尔逻辑将测试条件组合起来。可以使用以下三种布尔运算符。
 - [ condition1 ] && [ condition2 ]
 - [ condition1 ] || [ condition2 ]
+- ! [ condition ]
 
 第一种布尔运算使用布尔运算符 AND 来组合两个条件。要执行 then 部分的命令，两个条件都必须满足。
 
 第二种布尔运算使用 OR 布尔运算符来组合两个条件。如果任意条件为真，那么 then 部分的命令就会执行。
+
+第三种布尔运算使用 NOT 布尔运算符来反转一个条件。如果条件为真，则返回假。
 
 下面来演示 AND 布尔运算符的用法：
 
@@ -38,6 +41,21 @@ $
 ```
 
 使用 AND 布尔运算符时，两个测试条件都必须满足。
+
+我们再看看 NOT 布尔运算符的用法：
+
+```bash
+if ! grep pattern myfile > /dev/null
+then
+    ... Pattern is not there
+fi
+```
+
+或者
+
+```
+if ! [ -f $HOME/test.txt ]; then echo "has not test.txt"; fi
+```
 
 “&&”（AND）和“||”（OR）两种布尔运算符，还可以用于命令行中的多个命令的执行，语法如下。
 
@@ -76,6 +94,6 @@ $ [ -d temp ] || mkdir temp
 
 
 ### 参考资料:
-- 《The Linux Command Line: A Complete Introduction》: 27. Flow Control: Branching with if - Control Operators: Another Way to Branch
-- 《Linux Command Line and Shell Scripting Bible》: Chapter 12: Using Structured Commands - Considering Compound Testing
-
+- 《Linux命令行大全 第2版》: 27.7 控制操作符：另一种分支方式
+- 《Linux命令行与shell脚本编程大全（第4版）》: 12.5 复合条件测试
+- 《Shell脚本学习指南》: 6.2.3 逻辑的NOT、AND与OR
