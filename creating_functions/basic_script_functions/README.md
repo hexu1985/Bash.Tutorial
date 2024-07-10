@@ -65,6 +65,19 @@ This is an example of a function
 Now this is tne end of the script
 ```
 
+**删除函数**
+
+可以使用 `unset -f` 删除函数：
+
+```
+who_is_on ( ) {                             # Define a function
+    who | awk '{ print $1 }' | sort -u      # Generate sorted list of users
+}
+...
+unset -f who_is_on                          # Remove the function
+```
+
 ### 参考资料:
 - 《Linux命令行与shell脚本编程大全（第4版）》: 17.1 脚本函数基础
+- 《Shell脚本学习指南》: 6.1.1 变量赋值与环境
 

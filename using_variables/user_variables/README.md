@@ -16,6 +16,18 @@ var3=testing
 var4="still more testing"
 ```
 
+通过 readonly 命令，可以使变量成为只读模式，而赋值给它们是被禁止的。
+在Shell程序中，这是创建符号常量的一个好方法：
+
+```bash
+$ hours_per_day=24 seconds_per_hour=3600 days_per_week=7      # Assign values
+$ readonly hours_per_day seconds_per_hour days_per_week       # Make read-only
+$ echo $hours_per_day 
+24
+$ hours_per_day=23
+bash: hours_per_day: readonly variable
+```
+
 shell 脚本会以字符串形式存储所有的变量值，脚本中的各个命令可以自行决定变量值的数据类型。
 shell 脚本中定义的变量在脚本的整个生命周期里会一直保持着它们的值，在脚本结束时会被删除。
 
@@ -41,6 +53,16 @@ $ chmod u+x test3
 $ ./test3
 Katie checked in 10 days ago
 Jessica checked in 5 days ago
+```
+
+**变量的长度**
+
+我们可以使用 `${#variable}` 结构计算变量中字符的数目。例如：
+
+```
+$ myvar=hello
+$ echo ${#myvar}
+5
 ```
 
 除了显式定义方式`VAR=value`，对变量赋值还有另外几种：
@@ -176,6 +198,19 @@ echo "Today is $TODAY"
 
 ```
 Today is Tuesday
+```
+
+**删除变量**
+
+只要不被设为只读，可以和环境变量一样，用 unset 命令删除变量。
+
+```
+$ my_variable="I am going to be removed"
+$ echo $my_variable
+I am going to be removed
+$
+$ unset my_variable
+$ echo $my_variable
 ```
 
 
