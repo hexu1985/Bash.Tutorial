@@ -270,6 +270,6 @@ fi
 ```
 
 ### 参考资料:
-- 《Linux Command Line and Shell Scripting Bible》: Chapter 12: Using Structured Commands
-- 《UNIX Shells by Example》: 14.5.6 File Testing, EXAMPLE 14.25
-- 《The Linux Command Line: A Complete Introduction》: 27 Flow Control: Branching with if
+- 《Linux命令行与shell脚本编程大全（第4版）》: 12.4 test 命令
+- 《UNIX Shell范例精解 第4版》: 14.5.6 文件测试
+- 《Linux命令行大全 第2版》: 27.3 使用test
