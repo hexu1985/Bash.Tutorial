@@ -8,7 +8,7 @@
 在 bash shell 脚本中创建函数的语法有两种。
 第一种语法是使用关键字 function，随后跟上分配给该代码块的函数名：
 
-```shell
+```bash
 function name {
     commands
 }
@@ -20,7 +20,7 @@ commands 是组成函数的一个或多个 bash shell 命令。
 
 第二种在 bash shell 脚本中创建函数的语法更接近其他编程语言中定义函数的方式：
 
-```shell
+```bash
 name() {
     commands
 }
@@ -33,7 +33,7 @@ name() {
 
 要在脚本中使用函数，只需像其他 shell 命令一样写出函数名即可：
 
-```shell
+```bash
 #!/bin/bash
 
 # using a function in a script
@@ -54,7 +54,7 @@ echo "Now this is tne end of the script"
 
 执行脚本，输出结果如下所示：
 
-```shell
+```
 This is an example of a function
 This is an example of a function
 This is an example of a function
@@ -66,5 +66,5 @@ Now this is tne end of the script
 ```
 
 ### 参考资料:
-- 《Linux Command Line and Shell Scripting Bible》: Chapter 17: Creating Functions
+- 《Linux命令行与shell脚本编程大全（第4版）》: 17.1 脚本函数基础
 
