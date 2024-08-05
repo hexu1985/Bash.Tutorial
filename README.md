@@ -14,8 +14,10 @@
 - [输入/输出重定向](getting_started/input_output_redirection)
 - [流程控制](getting_started/flow_control)
 
+### [构建基础脚本](basic_script_functions)
+- [创建 shell 脚本文件](basic_script_functions/creating_a_script_file)
 
-## [使用变量](using_variables)
+### [使用变量](using_variables)
 - [环境变量](using_variables/environment_variables)
 - [用户自定义变量](using_variables/user_variables)
 - [变量扩展修饰符](using_variables/variable_expansion_modifiers)
