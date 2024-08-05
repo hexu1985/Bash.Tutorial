@@ -45,6 +45,7 @@
 - [脚本函数基础](creating_functions/basic_script_functions)
 - [函数返回值](creating_functions/returning_value_from_function)
 - [向函数传递参数](creating_functions/passing_parameters_to_a_function)
+- [在函数中处理变量](creating_functions/handling_variables_in_a_function)
 
 
 ### [进程管理](managing_processes)
