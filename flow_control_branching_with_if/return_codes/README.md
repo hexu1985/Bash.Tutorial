@@ -2,7 +2,7 @@
 
 命令（包括我们编写的脚本和shell函数）在执行完毕后，会向操作系统发送一个值，称之为返回码（“退出状态”）。
 这个值是一个0～255的整数，用来指示命令执行成功还是失败。按照惯例，数值0表示执行成功，其他的数值表示执行失败。
-shell将变量$?设置为上一次运行命令返回的代码。在下面的例子中可以看到。
+shell将变量 `$?` 设置为上一次运行命令返回的代码。在下面的例子中可以看到。
 
 ```bash
 $ ls -d /usr/bin
@@ -113,7 +113,7 @@ $ if true; false; then echo "It's true."; fi
 $
 ```
 
-### 参考资料:
-- 《The Linux Command Line: A Complete Introduction》: 27 Flow Control: Branching with if
-- 《UNIX Shells by Example》: Chapter 12: The exit Command and the ? Variable
 
+### 参考资料:
+- 《Linux命令行大全 第2版》: 27.2 退出状态
+- 《UNIX Shell范例精解 第4版》: 12.5.1 测试退出状态和`$?`变量
