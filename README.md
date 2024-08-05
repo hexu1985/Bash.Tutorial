@@ -16,6 +16,7 @@
 
 ### [构建基础脚本](basic_script_functions)
 - [创建 shell 脚本文件](basic_script_functions/creating_a_script_file)
+- [显示消息](basic_script_functions/displaying_messages)
 
 ### [使用变量](using_variables)
 - [环境变量](using_variables/environment_variables)
@@ -26,7 +27,7 @@
 
 ### [流程控制：分支语句](flow_control_branching_with_if)
 - [if/else语句](flow_control_branching_with_if/if_else)
-- [返回码](flow_control_branching_with_if/return_codes)
+- [退出状态](flow_control_branching_with_if/exit_status)
 - [test命令](flow_control_branching_with_if/test_command)
 - [null命令](flow_control_branching_with_if/null_command)
 - [复合条件测试](flow_control_branching_with_if/compound_testing)
