@@ -14,9 +14,11 @@
 - [输入/输出重定向](getting_started/input_output_redirection)
 - [流程控制](getting_started/flow_control)
 
+
 ### [构建基础脚本](basic_script_functions)
 - [创建 shell 脚本文件](basic_script_functions/creating_a_script_file)
 - [显示消息](basic_script_functions/displaying_messages)
+
 
 ### [使用变量](using_variables)
 - [环境变量](using_variables/environment_variables)
@@ -33,6 +35,10 @@
 - [复合条件测试](flow_control_branching_with_if/compound_testing)
 - [if-then的高级特性](flow_control_branching_with_if/advanced_if_then_features)
 - [case命令](flow_control_branching_with_if/case_command)
+
+
+### [结构化命令](using_structured_commands)
+- [使用 if-then 语句](using_structured_commands/working_with_the_if_then_statement)
 
 
 ### [流程控制：循环语句](flow_control_using_loops)

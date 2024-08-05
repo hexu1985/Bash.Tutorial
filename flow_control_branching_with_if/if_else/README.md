@@ -1,7 +1,5 @@
 ### if/else语句
 
-**使用 if-then 语句**
-
 最基本的结构化命令是 if-then 语句。if-then 语句的格式如下：
 
 ```bash
@@ -19,25 +17,24 @@ fi 语句用来表示if-then 语句到此结束。
 下面用一个简单的例子来解释一下这个概念：
 
 ```bash
-$ cat test1.sh
 #!/bin/bash
 # testing the if statement
 if pwd
 then
-    echo "it worked"
+	echo "It worked"
 fi
-$
 ```
 
 该脚本在 if 行中使用了 pwd 命令。如果命令成功结束，那么 echo 语句就会显示字符串。
 当你在命令行中运行该脚本时，会得到如下结果：
 
 ```bash
-$ ./test1.sh
+$ ./01-testing-if
 /home/christine/scripts
 It worked
 $
 ```
+
 shell 执行了 if 行中的 pwd 命令。由于退出状态码是 0，因此它也执行了 then 部分的 echo 语句。
 
 
