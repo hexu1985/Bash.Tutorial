@@ -1,6 +1,4 @@
 #!/bin/bash
-# Author: Ali Moradzade
-
 # testing variables
 
 days=10

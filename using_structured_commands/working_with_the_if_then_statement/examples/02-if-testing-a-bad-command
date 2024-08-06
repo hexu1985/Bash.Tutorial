@@ -1,6 +1,4 @@
 #!/bin/bash
-# Author: Ali Moradzade
-
 # testing a bad command
 if IamNotaCommand
 then

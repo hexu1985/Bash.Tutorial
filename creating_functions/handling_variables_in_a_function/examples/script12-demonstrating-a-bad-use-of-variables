@@ -1,9 +1,4 @@
 #!/bin/bash
-#=======================
-# Author : Ali Moradzade
-# Created: 2022/01/12
-#=======================
-
 # demonstrating a bad use of variables
 
 function func1 {

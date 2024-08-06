@@ -1,9 +1,4 @@
 #!/bin/bash
-#=======================
-# Author : Ali Moradzade
-# Created: 2022/01/11
-#=======================
-
 # using a function in a script
 
 function func1 {

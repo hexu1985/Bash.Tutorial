@@ -1,9 +1,4 @@
 #!/bin/bash
-#=======================
-# Author : Ali Moradzade
-# Created: 2021/12/29
-#=======================
-
 # using pattern matching
 if [[ $USER == h* ]]
 then

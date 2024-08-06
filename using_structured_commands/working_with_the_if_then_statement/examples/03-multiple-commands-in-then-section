@@ -1,6 +1,4 @@
 #!/bin/bash
-# Author: Ali Moradzade
-
 # testing multiple commands in the then section
 #testuser=hexu
 testuser=NoSuchUser

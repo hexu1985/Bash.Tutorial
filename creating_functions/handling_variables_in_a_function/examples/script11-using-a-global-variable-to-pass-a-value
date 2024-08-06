@@ -1,9 +1,4 @@
 #!/bin/bash
-#=======================
-# Author : Ali Moradzade
-# Created: 2022/01/12
-#=======================
-
 # using a global variable to pass a value
 
 function db1 {

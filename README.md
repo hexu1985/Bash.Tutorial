@@ -15,10 +15,10 @@
 - [流程控制](getting_started/flow_control)
 
 
-### [构建基础脚本](basic_script_functions)
-- [创建 shell 脚本文件](basic_script_functions/creating_a_script_file)
-- [显示消息](basic_script_functions/displaying_messages)
-- [退出脚本](basic_script_functions/exiting_the_script)
+### [构建基础脚本](basic_script_building)
+- [创建 shell 脚本文件](basic_script_building/creating_a_script_file)
+- [显示消息](basic_script_building/displaying_messages)
+- [退出脚本](basic_script_building/exiting_the_script)
 
 
 ### [使用变量](using_variables)

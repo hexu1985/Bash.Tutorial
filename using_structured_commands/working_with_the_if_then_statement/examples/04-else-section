@@ -1,6 +1,4 @@
 #!/bin/bash
-# Author: Ali Moradzade
-
 # testing the else section
 testuser=NoSuchUser
 

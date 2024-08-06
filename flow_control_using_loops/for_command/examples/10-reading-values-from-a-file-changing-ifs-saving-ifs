@@ -1,9 +1,4 @@
 #!/bin/bash
-#=======================
-# Author : Ali Moradzade
-# Created: 2021/12/30
-#=======================
-
 # reading values from a file
 file="states"
 

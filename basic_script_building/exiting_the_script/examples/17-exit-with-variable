@@ -1,6 +1,4 @@
 #!/bin/bash
-# Author: Ali Moradzade
-
 # testing the exit status
 var1=10
 var2=20

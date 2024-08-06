@@ -1,9 +1,4 @@
 #!/bin/bash
-#=======================
-# Author : Ali Moradzade
-# Created: 2022/01/11
-#=======================
-
 # using the return command in a function
 
 function db1 {

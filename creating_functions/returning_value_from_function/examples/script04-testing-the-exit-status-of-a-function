@@ -1,9 +1,4 @@
 #!/bin/bash
-#=======================
-# Author : Ali Moradzade
-# Created: 2022/01/11
-#=======================
-
 # testing the exit status of a function
 
 func1() {
