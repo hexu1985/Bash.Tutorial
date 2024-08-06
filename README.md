@@ -18,6 +18,7 @@
 ### [构建基础脚本](basic_script_building)
 - [创建 shell 脚本文件](basic_script_building/creating_a_script_file)
 - [显示消息](basic_script_building/displaying_messages)
+- [使用变量](basic_script_building/using_variables)
 - [退出脚本](basic_script_building/exiting_the_script)
 
 

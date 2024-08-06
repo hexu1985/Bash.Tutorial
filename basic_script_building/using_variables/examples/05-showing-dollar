@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "The cost of the item is $15"
+echo "The cost of the item is \$15"
