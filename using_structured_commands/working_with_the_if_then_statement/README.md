@@ -151,6 +151,40 @@ The user NoSuchUser does not exist on this system.
 We are outside the if statement
 ```
 
+shell提供了两个非常简单的内置命令，它们不做任何事情，除了以一个0或1退出状态来终止执行。
+`true`命令总是表示执行成功，而`false`命令总是表示执行失败。
+
+例如：
+
+```
+$ true
+$ echo $?
+0
+$ false
+$ echo $?
+1
+```
+
+我们可以用这两个命令来查看if语句是如何工作的。if语句真正做的事情是评估命令的成功或失败。
+
+```
+$ if true; then echo "It's true."; fi
+It's true.
+$ if false; then echo "It's true."; fi
+$
+```
+
+当在if后面的命令执行成功时，命令echo ”It’s true.”会被执行，而当在if后面的命令执行失败时，
+该命令则不执行。如果在if后面有一系列的命令，那么则根据最后一个命令的执行结果进行评估。
+
+```
+$ if false; true; then echo "It's true."; fi
+It's true.
+$ if true; false; then echo "It's true."; fi
+$
+```
+
 ### 参考资料:
 - 《Linux命令行与shell脚本编程大全（第4版）》: 12.1 使用 if-then 语句
+- 《Linux命令行大全 第2版》: 27.2 退出状态
 
