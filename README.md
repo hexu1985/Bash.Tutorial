@@ -40,6 +40,7 @@
 
 ### [结构化命令](using_structured_commands)
 - [使用 if-then 语句](using_structured_commands/working_with_the_if_then_statement)
+- [嵌套 if 语句](using_structured_commands/nesting_ifs)
 
 
 ### [流程控制：循环语句](flow_control_using_loops)
