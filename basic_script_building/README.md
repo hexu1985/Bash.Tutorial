@@ -4,5 +4,6 @@
 - [显示消息](displaying_messages)
 - [使用变量](using_variables)
 - [重定向输入和输出](redirecting_input_and_output)
+- [管道](employing_pipes)
 - [退出脚本](exiting_the_script)
 

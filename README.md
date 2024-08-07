@@ -20,6 +20,7 @@
 - [显示消息](basic_script_building/displaying_messages)
 - [使用变量](basic_script_building/using_variables)
 - [重定向输入和输出](basic_script_building/redirecting_input_and_output)
+- [管道](basic_script_building/employing_pipes)
 - [退出脚本](basic_script_building/exiting_the_script)
 
 
