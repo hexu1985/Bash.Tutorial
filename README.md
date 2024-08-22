@@ -32,6 +32,10 @@
 - [子串的变量扩展](using_variables/variable_expansion_substrings)
 
 
+### [使用环境变量](using_environment_variables)
+- [什么是环境变量](using_environment_variables/exploring_environment_variables)
+
+
 ### [流程控制：分支语句](flow_control_branching_with_if)
 - [if/else语句](flow_control_branching_with_if/if_else)
 - [退出状态](flow_control_branching_with_if/exit_status)
