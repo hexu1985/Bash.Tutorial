@@ -34,6 +34,7 @@
 
 ### [使用环境变量](using_environment_variables)
 - [什么是环境变量](using_environment_variables/exploring_environment_variables)
+- [设置用户自定义变量](using_environment_variables/setting_user_defined_variables)
 
 
 ### [流程控制：分支语句](flow_control_branching_with_if)
