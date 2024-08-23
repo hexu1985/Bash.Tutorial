@@ -28,13 +28,14 @@
 ### [使用变量](using_variables)
 - [环境变量](using_variables/environment_variables)
 - [用户自定义变量](using_variables/user_variables)
-- [变量扩展修饰符](using_variables/variable_expansion_modifiers)
-- [子串的变量扩展](using_variables/variable_expansion_substrings)
 
 
 ### [使用环境变量](using_environment_variables)
 - [什么是环境变量](using_environment_variables/exploring_environment_variables)
 - [设置用户自定义变量](using_environment_variables/setting_user_defined_variables)
+- [删除环境变量](using_environment_variables/removing_environment_variables)
+- [变量扩展修饰符](using_environment_variables/variable_expansion_modifiers)
+- [子串的变量扩展](using_environment_variables/variable_expansion_substrings)
 
 
 ### [流程控制：分支语句](flow_control_branching_with_if)
