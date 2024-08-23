@@ -129,6 +129,18 @@ The resuling value is 10
 $
 ```
 
+通过 readonly 命令，可以使变量成为只读模式，而赋值给它们是被禁止的。
+在Shell程序中，这是创建符号常量的一个好方法：
+
+```bash
+$ hours_per_day=24 seconds_per_hour=3600 days_per_week=7      # Assign values
+$ readonly hours_per_day seconds_per_hour days_per_week       # Make read-only
+$ echo $hours_per_day 
+24
+$ hours_per_day=23
+bash: hours_per_day: readonly variable
+```
+
 shell 脚本中最有用的特性之一是可以从命令输出中提取信息并将其赋给变量。
 把输出赋给变量之后，就可以随意在脚本中使用了。在脚本中处理数据时，这个特性显得尤为方便。
 有两种方法可以将命令输出赋给变量。
