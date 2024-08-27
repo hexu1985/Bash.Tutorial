@@ -38,6 +38,10 @@
 - [子串的变量扩展](using_environment_variables/variable_expansion_substrings)
 
 
+### [数组](arrays)
+- [创建数组](arrays/creating_an_array)
+
+
 ### [流程控制：分支语句](flow_control_branching_with_if)
 - [if/else语句](flow_control_branching_with_if/if_else)
 - [退出状态](flow_control_branching_with_if/exit_status)
