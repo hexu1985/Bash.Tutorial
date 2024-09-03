@@ -39,6 +39,8 @@
 
 
 ### [数组](arrays)
+- [数组的赋值](arrays/assigning_arrays)
+
 - [创建数组](arrays/creating_an_array)
 - [为数组赋值](arrays/assigning_values_to_an_array)
 
