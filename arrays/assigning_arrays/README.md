@@ -132,7 +132,7 @@ IFS=$oIFS
 运行这个脚本时，会产生如下输出：
 
 ```
-$ readhosts.sh
+$ ./readhosts.sh
 line: 127.0.0.1	localhost
 line: 127.0.1.1	hexu-Lenovo-Legion-Y7000P2020H
 line: # The following lines are desirable for IPv6 capable hosts
@@ -217,6 +217,7 @@ done < /etc/passwd
 运行这个脚本时，会产生如下输出：
 
 ```
+$ ./user.sh
 root's directory /root exists
 daemon's directory /usr/sbin exists
 bin's directory /bin exists
@@ -264,6 +265,7 @@ NetworkManager OpenConnect plugin's directory /var/lib/NetworkManager exists
 MySQL Server's directory /nonexistent doesn't exist
 mosquitto's directory /var/lib/mosquitto exists
 redis's directory /var/lib/redis exists
+$
 ```
 
 bash shell 内置命令 readarray 以比如前面的读取 /etc/hosts 脚本更灵活的方式读取文本文件。
