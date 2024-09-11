@@ -80,3 +80,26 @@ Hobby: surfing
 $
 ```
 
+但是，这不适用于稀疏数组。索引的实际值不是以这种方式来传递的，
+因此 hobbies 数组不能是 activities 数组的真实副本。
+
+```
+$ activities[10]=”scuba diving”
+$ hobbies=”( ${activities[@]} )”
+$ for act in `seq 0 10`
+> do
+> echo “$act : ${activities[$act]} / ${hobbies[$act]}”
+> done
+0 : swimming / swimming
+1 : water skiing / water skiing
+2 : canoeing / canoeing
+3 : white-water rafting / white-water rafting
+4 : surfing / surfing
+5 : / scuba diving
+6 : /
+7 : /
+8 : /
+9 : /
+10 : scuba diving /
+$
+```
