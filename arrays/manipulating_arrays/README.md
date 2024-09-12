@@ -84,11 +84,11 @@ $
 因此 hobbies 数组不能是 activities 数组的真实副本。
 
 ```
-$ activities[10]=”scuba diving”
-$ hobbies=”( ${activities[@]} )”
+$ activities[10]="scuba diving"
+$ hobbies="( ${activities[@]} )"
 $ for act in `seq 0 10`
 > do
-> echo “$act : ${activities[$act]} / ${hobbies[$act]}”
+> echo "$act : ${activities[$act]} / ${hobbies[$act]}"
 > done
 0 : swimming / swimming
 1 : water skiing / water skiing
@@ -101,5 +101,67 @@ $ for act in `seq 0 10`
 8 : /
 9 : /
 10 : scuba diving /
+$
+```
+
+向数组追加元素的方法与复制数组非常类似。最简单的追加到数组的方法是将复制数组的语句进行扩展。
+
+```
+$ hobbies=( "${activities[@]}" diving )
+$ for hobby in "${hobbies[@]}"
+> do
+> echo "Hobby: $hobby"
+> done
+Hobby: swimming
+Hobby: water skiing
+Hobby: canoeing
+Hobby: white-water rafting
+Hobby: surfing
+Hobby: scuba diving
+Hobby: diving
+$
+```
+
+当将单个项目附加到数组时，数组实际上是零索引的事实让它变得更容易。
+
+```
+$ hobbies[${#hobbies[@]}]=rowing
+$ for hobby in "${hobbies[@]}"
+> do
+> echo "Hobby: $hobby"
+> done
+Hobby: swimming
+Hobby: water skiing
+Hobby: canoeing
+Hobby: white-water rafting
+Hobby: surfing
+Hobby: scuba diving
+Hobby: diving
+Hobby: rowing
+$
+```
+
+bash shell 确实具有用于组合两个数组的内置语法。
+使用类似 C 的 `+=` 的表示法，此方法更简洁，并使代码更清晰。
+
+```
+$ airsports=( flying gliding parachuting )
+$ activities+=("${airsports[@]}")
+$ for act in "${activities[@]}"
+> do
+> echo "Activity: $act"
+> done
+Activity: swimming
+Activity: water skiing
+Activity: canoeing
+Activity: white-water rafting
+Activity: surfing
+Activity: scuba diving
+Activity: climbing
+Activity: walking
+Activity: cycling
+Activity: flying
+Activity: gliding
+Activity: parachuting
 $
 ```
