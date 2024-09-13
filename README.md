@@ -24,18 +24,17 @@
 - [执行数学运算](basic_script_building/performing_math)
 - [退出脚本](basic_script_building/exiting_the_script)
 
-
-### [使用变量](using_variables)
-- [环境变量](using_variables/environment_variables)
-- [用户自定义变量](using_variables/user_variables)
-
-
 ### [使用环境变量](using_environment_variables)
 - [什么是环境变量](using_environment_variables/exploring_environment_variables)
 - [设置用户自定义变量](using_environment_variables/setting_user_defined_variables)
 - [删除环境变量](using_environment_variables/removing_environment_variables)
-- [变量扩展修饰符](using_environment_variables/variable_expansion_modifiers)
-- [子串的变量扩展](using_environment_variables/variable_expansion_substrings)
+
+
+### [使用变量](using_variables)
+- [环境变量](using_variables/environment_variables)
+- [用户自定义变量](using_variables/user_variables)
+- [变量扩展修饰符](using_variables/variable_expansion_modifiers)
+- [子串的变量扩展](using_variables/variable_expansion_substrings)
 
 
 ### [数组](arrays)
