@@ -165,3 +165,60 @@ Activity: gliding
 Activity: parachuting
 $
 ```
+
+从数组中删除元素与删除变量相同。可以使用 `myarray[3]=` 或 `unset myarray[3]`。
+同样，可以 unset 整个数组。但是，`myarray=` 本身只会清除数组中第一元素的值。
+所有这些情况都在接下来的代码中进行了演示。
+
+```
+$ activities=( swimming water skiing canoeing white-water rafting surfing scuba diving climbing walking cycling flying gliding parachuting )
+$ for act in `seq 0 $((${#activities[@]} - 1))`
+> do
+> echo "Activity $act: ${activities[$act]}"
+> done
+Activity 0: swimming
+Activity 1: water skiing
+Activity 2: canoeing
+Activity 3: white-water rafting
+Activity 4: surfing
+Activity 5: scuba diving
+Activity 6: climbing
+Activity 7: walking
+Activity 8: cycling
+Activity 9: flying
+Activity 10: gliding
+Activity 11: parachuting
+$ activities[7]=
+$ for act in `seq 0 $((${#activities[@]} - 1))`
+> do
+> echo "Activity $act: ${activities[$act]}"
+> done
+Activity 0: swimming
+Activity 1: water skiing
+Activity 2: canoeing
+Activity 3: white-water rafting
+Activity 4: surfing
+Activity 5: scuba diving
+Activity 6: climbing
+Activity 7:
+Activity 8: cycling
+Activity 9: flying
+Activity 10: gliding
+Activity 11: parachuting
+$
+```
+
+这样做的效果是创建一个稀疏数组。使用 `unset activity[7]` 几乎可以得到相同的效果。
+将变量设置为空字符串与完全删除是有区别的，但它们的区别只有在 
+`${variable+string}` 或使用 `${variable?string}` 形式时才会比较明显。
+
+```
+$ echo ${activities[7]}
+$ echo ${activities[7]+"Item 7 is set"}
+Item 7 is set
+$ unset activities[7]
+$ echo ${activities[7]+"Item 7 is set"}
+$
+```
+
+
