@@ -41,6 +41,7 @@
 - [数组的赋值](arrays/assigning_arrays)
 - [数组的访问](arrays/accessing_arrays)
 - [关联数组](arrays/associative_arrays)
+- [数组操作](arrays/manipulating_arrays)
 
 
 ### [流程控制：分支语句](flow_control_branching_with_if)

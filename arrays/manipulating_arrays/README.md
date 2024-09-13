@@ -221,4 +221,33 @@ $ echo ${activities[7]+"Item 7 is set"}
 $
 ```
 
+另外，对不使用索引来引用数组被解释为对数组第一个元素的引用。
+因此，以这种方式清除数组只会删除数组的第一项。
+
+```
+$ activities=
+$ for act in `seq 0 $((${#activities[@]} - 1))`
+> do
+> echo "Activity $act: ${activities[$act]}"
+> done
+Activity 0:
+Activity 1: water skiing
+Activity 2: canoeing
+Activity 3: white-water rafting
+Activity 4: surfing
+Activity 5: scuba diving
+Activity 6: climbing
+Activity 7:
+Activity 8: cycling
+Activity 9: flying
+Activity 10: gliding
+Activity 11: parachuting
+```
+
+如果对 activities 数组本身进行unset，则这个数组都会消失。
+尽管你也可以使用 `unset myarray[*]`，但将数组整个删除才是正确的。
+
+
+### 参考资料:
+- 《Shell脚本编程诀窍 适用于Linux、Bash等》: 9.4 数组操作
 
