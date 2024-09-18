@@ -1,0 +1,8 @@
+
+
+### [使用变量](using_variables)
+- [查找字符串](using_variables/searching_strings)
+    《Shell脚本编程诀窍 适用于Linux、Bash等》: 7.2 查找字符串
+  
+- [间接操作](using_variables/indirection)
+    《Shell脚本编程诀窍 适用于Linux、Bash等》: 7.4 间接操作
