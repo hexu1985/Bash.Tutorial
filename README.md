@@ -56,7 +56,8 @@
 
 
 ### [结构化命令](using_structured_commands)
-- [使用 if-then 语句](using_structured_commands/working_with_the_if_then_statement)
+- [使用 if-then 语句](using_structured_commands/if_then_statement)
+- [if-then-else 语句](using_structured_commands/if_then_else_statement)
 - [嵌套 if 语句](using_structured_commands/nesting_ifs)
 
 
