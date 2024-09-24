@@ -61,7 +61,7 @@
 - [嵌套 if 语句](using_structured_commands/nesting_ifs)
 - [test命令](using_structured_commands/test_command)
 - [数值比较](using_structured_commands/numeric_comparisons)
-
+- [字符串比较](using_structured_commands/string_comparisons)
 
 ### [流程控制：循环语句](flow_control_using_loops)
 - [for命令](flow_control_using_loops/for_command)

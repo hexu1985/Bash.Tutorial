@@ -5,4 +5,5 @@
 - [嵌套 if 语句](nesting_ifs)
 - [test命令](test_command)
 - [数值比较](numeric_comparisons)
+- [字符串比较](string_comparisons)
 
