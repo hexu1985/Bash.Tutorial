@@ -6,4 +6,5 @@
 - [test命令](test_command)
 - [数值比较](numeric_comparisons)
 - [字符串比较](string_comparisons)
+- [文件比较](file_comparisons)
 
