@@ -7,7 +7,7 @@ null 命令有时被放在if命令后面作为一个占位符，这时if命令�
 
 **示例1：脚本**
 
-```
+```bash
     #!/bin/bash
     # filename: name_grep
 1   name=Tom
@@ -26,6 +26,50 @@ null 命令有时被放在if命令后面作为一个占位符，这时if命令�
 3. 冒号代表 null 命令。它只返回 0 退出状态。
 4. 我们真正想做的是打印一条错误消息，如果未找到 Tom 则退出。
    如果 grep 命令失败，将执行 else 之后的命令。
+
+
+**示例2：命令行**
+
+```
+1   $ DATAFILE=
+2   $ : ${DATAFILE:=$HOME/db/datafile}
+    $ echo $DATAFILE
+    /home/hexu/db/datafile
+3   $ : ${DATAFILE:=$HOME/junk}
+    $ echo $DATAFILE
+    /home/hexu/db/datafile
+```
+
+1. 变量 DATAFILE 被赋值为空。
+2. 冒号命令是一个不执行任何操作的命令。修饰符（`:=`）返回一个可以赋给变量或用于测试的值。
+   在此示例中，表达式作为参数传递给这条空命令。shell 会执行变量替换；也就是说，如果 DATAFILE 还没有值，则将路径名赋给 DATAFILE。
+   变量 DATAFILE 是永久设置的。
+3. 因为变量已经设置好了，所以 shell 不会再用修饰符（`:=`）右边提供的默认值重置它。
+
+
+**示例3：脚本**
+
+```bash
+    #!/bin/bash
+    # Scriptname: wholenum
+    # Purpose:The expr command tests that the user enters an integer
+1   echo "Enter an integer."
+    read number
+2   if expr "$number" + 0 >& /dev/null
+    then
+3       :
+    else
+4       echo "You did not enter an integer value."
+        exit 1
+5   fi
+```
+
+1. 要求用户输入一个整数。将该整数赋值给变量 number。
+2. expr 命令计算表达式。如果可以执行加法，则说明 number 是整数，expr 返回 Success exit 状态。
+   所有输出都被重定向到位容器 `/dev/null`。
+3. 如果 expr 成功，则返回 0 退出状态，并且冒号命令不执行任何操作。
+4. 如果 expr 命令失败，它将返回非零退出状态，echo 命令显示消息，程序退出。
+5. fi 结束 if 块。
 
 
 ### 参考资料:

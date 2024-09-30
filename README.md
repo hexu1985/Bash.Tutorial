@@ -63,6 +63,7 @@
 - [数值比较](using_structured_commands/numeric_comparisons)
 - [字符串比较](using_structured_commands/string_comparisons)
 - [文件比较](using_structured_commands/file_comparisons)
+- [null命令](using_structured_commands/null_command)
 
 
 ### [流程控制：循环语句](flow_control_using_loops)
