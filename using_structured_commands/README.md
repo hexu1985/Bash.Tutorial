@@ -8,4 +8,5 @@
 - [字符串比较](string_comparisons)
 - [文件比较](file_comparisons)
 - [null命令](null_command)
+- [复合条件测试](compound_testing)
 

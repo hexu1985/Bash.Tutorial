@@ -64,6 +64,7 @@
 - [字符串比较](using_structured_commands/string_comparisons)
 - [文件比较](using_structured_commands/file_comparisons)
 - [null命令](using_structured_commands/null_command)
+- [复合条件测试](using_structured_commands/compound_testing)
 
 
 ### [流程控制：循环语句](flow_control_using_loops)
