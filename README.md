@@ -37,6 +37,7 @@
 - [变量扩展修饰符](using_variables/variable_expansion_modifiers)
 - [子串的变量扩展](using_variables/variable_expansion_substrings)
 - [字符串查找](using_variables/searching_strings)
+- [间接操作](using_variables/indirection)
 
 
 ### [数组](arrays)
