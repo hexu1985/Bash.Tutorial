@@ -45,16 +45,6 @@
 - [数组操作](arrays/manipulating_arrays)
 
 
-### [流程控制：分支语句](flow_control_branching_with_if)
-- [if/else语句](flow_control_branching_with_if/if_else)
-- [退出状态](flow_control_branching_with_if/exit_status)
-- [test命令](flow_control_branching_with_if/test_command)
-- [null命令](flow_control_branching_with_if/null_command)
-- [复合条件测试](flow_control_branching_with_if/compound_testing)
-- [if-then的高级特性](flow_control_branching_with_if/advanced_if_then_features)
-- [case命令](flow_control_branching_with_if/case_command)
-
-
 ### [结构化命令](using_structured_commands)
 - [使用 if-then 语句](using_structured_commands/if_then_statement)
 - [if-then-else 语句](using_structured_commands/if_then_else_statement)
