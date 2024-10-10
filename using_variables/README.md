@@ -6,5 +6,6 @@
 - [子串的变量扩展](variable_expansion_substrings)
 - [字符串查找](searching_strings)
 - [间接操作](indirection)
+- [使用source命令加载变量](sourcing_variables)
 
 

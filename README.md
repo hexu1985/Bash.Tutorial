@@ -38,6 +38,7 @@
 - [子串的变量扩展](using_variables/variable_expansion_substrings)
 - [字符串查找](using_variables/searching_strings)
 - [间接操作](using_variables/indirection)
+- [使用source命令加载变量](using_variables/sourcing_variables)
 
 
 ### [数组](arrays)
