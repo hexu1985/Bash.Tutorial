@@ -10,4 +10,5 @@
 - [null命令](null_command)
 - [复合条件测试](compound_testing)
 - [if-then 的高级特性](advanced_if_then_features)
+- [case命令](case_command)
 

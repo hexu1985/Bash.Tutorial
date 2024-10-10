@@ -66,6 +66,7 @@
 - [null命令](using_structured_commands/null_command)
 - [复合条件测试](using_structured_commands/compound_testing)
 - [if-then 的高级特性](using_structured_commands/advanced_if_then_features)
+- [case命令](using_structured_commands/case_command)
 
 
 ### [流程控制：循环语句](flow_control_using_loops)
