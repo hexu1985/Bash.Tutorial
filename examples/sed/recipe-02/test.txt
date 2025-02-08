@@ -1,0 +1,11 @@
+
+  ptr_in->header.timestamp_us = (uint64_t)ptr_out->header().timestamp_us();
+  ptr_in->header.timestamp_ms = (uint64_t)ptr_out->header().timestamp_ms();
+  ptr_in->header.sync_timestamp_ms = (uint64_t)ptr_out->header().sync_timestamp_ms();
+  ptr_in->header.recv_timestamp_ms = (uint64_t)ptr_out->header().recv_timestamp_ms();
+  ptr_in->header.repeated_topic_flag = (bool)ptr_out->header().repeated_topic_flag();
+  ptr_in->header.datacall_timestamp_ms = (uint64_t)ptr_out->header().datacall_timestamp_ms();
+  ptr_in->header.frame_id = (uint64_t)ptr_out->header().frame_id();
+  ptr_in->header.is_slice = (bool)ptr_out->header().is_slice();
+  ptr_in->header.slice_total_size = (int32_t)ptr_out->header().slice_total_size();
+  ptr_in->header.slice_index = (int32_t)ptr_out->header().slice_index();
