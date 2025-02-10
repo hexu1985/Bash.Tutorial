@@ -1,3 +1,35 @@
-    ptr_out->linear_velocity_std.x = (float)ptr_in->linear_velocity_std().x();
-    ptr_out->linear_velocity_std.y = (float)ptr_in->linear_velocity_std().y();
-    ptr_out->linear_velocity_std.z = (float)ptr_in->linear_velocity_std().z();
+    for(int i=0;i<10; i++)
+    {
+        ptr_out->passable_info.straight_tfl_info.traffic_light_ids[i] = (uint64_t)ptr_in->passable_info().straight_tfl_info().traffic_light_ids()[i];
+    }
+
+    ptr_out->passable_info.left_tfl_info.shape = (uint8_t)ptr_in->passable_info().left_tfl_info().shape();
+    ptr_out->passable_info.left_tfl_info.status = (uint8_t)ptr_in->passable_info().left_tfl_info().status();
+    ptr_out->passable_info.left_tfl_info.countdown = (float)ptr_in->passable_info().left_tfl_info().countdown();
+    ptr_out->passable_info.left_tfl_info.shape_confidence = (uint16_t)ptr_in->passable_info().left_tfl_info().shape_confidence();
+    ptr_out->passable_info.left_tfl_info.status_confidence = (uint16_t)ptr_in->passable_info().left_tfl_info().status_confidence();
+    ptr_out->passable_info.left_tfl_info.countdown_confidence = (uint16_t)ptr_in->passable_info().left_tfl_info().countdown_confidence();
+    for(int i=0;i<10; i++)
+    {
+        ptr_out->passable_info.left_tfl_info.traffic_light_ids[i] = (uint64_t)ptr_in->passable_info().left_tfl_info().traffic_light_ids()[i];
+    }
+    ptr_out->passable_info.right_tfl_info.shape = (uint8_t)ptr_in->passable_info().right_tfl_info().shape();
+    ptr_out->passable_info.right_tfl_info.status = (uint8_t)ptr_in->passable_info().right_tfl_info().status();
+    ptr_out->passable_info.right_tfl_info.countdown = (float)ptr_in->passable_info().right_tfl_info().countdown();
+    ptr_out->passable_info.right_tfl_info.shape_confidence = (uint16_t)ptr_in->passable_info().right_tfl_info().shape_confidence();
+    ptr_out->passable_info.right_tfl_info.status_confidence = (uint16_t)ptr_in->passable_info().right_tfl_info().status_confidence();
+    ptr_out->passable_info.right_tfl_info.countdown_confidence = (uint16_t)ptr_in->passable_info().right_tfl_info().countdown_confidence();
+    for(int i=0;i<10; i++)
+    {
+        ptr_out->passable_info.right_tfl_info.traffic_light_ids[i] = (uint64_t)ptr_in->passable_info().right_tfl_info().traffic_light_ids()[i];
+    }
+    ptr_out->passable_info.uturn_tfl_info.shape = (uint8_t)ptr_in->passable_info().uturn_tfl_info().shape();
+    ptr_out->passable_info.uturn_tfl_info.status = (uint8_t)ptr_in->passable_info().uturn_tfl_info().status();
+    ptr_out->passable_info.uturn_tfl_info.countdown = (float)ptr_in->passable_info().uturn_tfl_info().countdown();
+    ptr_out->passable_info.uturn_tfl_info.shape_confidence = (uint16_t)ptr_in->passable_info().uturn_tfl_info().shape_confidence();
+    ptr_out->passable_info.uturn_tfl_info.status_confidence = (uint16_t)ptr_in->passable_info().uturn_tfl_info().status_confidence();
+    ptr_out->passable_info.uturn_tfl_info.countdown_confidence = (uint16_t)ptr_in->passable_info().uturn_tfl_info().countdown_confidence();
+    for(int i=0;i<10; i++)
+    {
+        ptr_out->passable_info.uturn_tfl_info.traffic_light_ids[i] = (uint64_t)ptr_in->passable_info().uturn_tfl_info().traffic_light_ids()[i];
+    }
