@@ -1,0 +1,3 @@
+    ptr_out->linear_velocity_std.x = (float)ptr_in->linear_velocity_std().x();
+    ptr_out->linear_velocity_std.y = (float)ptr_in->linear_velocity_std().y();
+    ptr_out->linear_velocity_std.z = (float)ptr_in->linear_velocity_std().z();

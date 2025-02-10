@@ -1,0 +1,3 @@
+    local_pose_ptr->linear_velocity_std().x() = 1;
+    local_pose_ptr->linear_velocity_std().y() = 1;
+    local_pose_ptr->linear_velocity_std().z() = 1;
