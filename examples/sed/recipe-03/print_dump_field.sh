@@ -9,6 +9,7 @@ cp ${infile} ${tmpfile}
 sed -i 's/ptr_out->//g' ${tmpfile}
 sed -i 's/ =.*$//g' ${tmpfile}
 sed -i 's/^ *//g' ${tmpfile}
+sed -i '/^$/d' ${tmpfile}
 
 rm -f ${outfile}
 cat ${tmpfile} | \

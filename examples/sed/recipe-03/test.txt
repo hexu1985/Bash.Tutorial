@@ -3,6 +3,7 @@
     ptr_out->fim_header().rolling_counter() = (uint32_t)ptr_in->fim_header.rolling_counter;
     ptr_out->fim_header().checksum() = (uint32_t)ptr_in->fim_header.checksum;
     ptr_out->fim_header().fim_cnt() = (uint32_t)ptr_in->fim_header.fim_cnt;
+
     ptr_out->fim().fid_noa_failure() = (uint32_t)ptr_in->fim.fid_noa_failure;
     ptr_out->fim().fid_takeover_request() = (uint32_t)ptr_in->fim.fid_takeover_request;
     ptr_out->fim().fid_alc_failure() = (uint32_t)ptr_in->fim.fid_alc_failure;
