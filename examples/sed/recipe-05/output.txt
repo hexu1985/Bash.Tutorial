@@ -10,23 +10,23 @@ std::vector<SocMsgPtr> MspVoyahIpcManager::IpcTransferAdcuEventGroupStructurePro
 
     memcpy(gPbBufferAdcuEventGroupStructureData, p_data + sizeof(SocMcuPripCommHead), pay_load_ptr->Size() - sizeof(SocMcuPripCommHead));
     struct CDR_ucdrBuffer dec_stream = {0};
-    CDR_AdcuEventGroupStructureTopic adcuEventGroupStructureObjTmp;
-    size_t size = CDR_AdcuEventGroupStructureTopic_size_of_topic(&adcuEventGroupStructureObjTmp, 0);
+    CDR_AdcuEventGroupStructure adcuEventGroupStructureObjTmp;
+    size_t size = CDR_AdcuEventGroupStructure_size_of_topic(&adcuEventGroupStructureObjTmp, 0);
     if (size > ADCU_EVENT_GROUP_STRUCTURE_BUFFER_SIZE) {
       PG_LOG(ERROR) << "adcuEventGroupStructureObjTmp size overflow, size is: " << size;
       continue;
     }
     ucdr_init_buffer_origin_offset_endian(&dec_stream, gPbBufferAdcuEventGroupStructureData, size, 0, 0, UCDR_LITTLE_ENDIANNESS);
-    if(!CDR_AdcuEventGroupStructureTopic_deserialize_topic(&dec_stream, &adcuEventGroupStructureObjTmp)) {
+    if(!CDR_AdcuEventGroupStructure_deserialize_topic(&dec_stream, &adcuEventGroupStructureObjTmp)) {
       PG_LOG(ERROR) << "pb_decode error!";
     }
 
-    auto tmsg_ptr = std::make_shared<phigent::TMessage<std::shared_ptr<krider::modemanager::AdcuEventGroupStructureTopic>>>();
-    tmsg_ptr->data = std::make_shared<krider::modemanager::AdcuEventGroupStructureTopic>();
-    MspMapAdcuEventGroupStructureTopicData(tmsg_ptr->data, &adcuEventGroupStructureObjTmp);
+    auto tmsg_ptr = std::make_shared<phigent::TMessage<std::shared_ptr<krider::ipcuds::AdcuEventGroupStructure>>>();
+    tmsg_ptr->data = std::make_shared<krider::ipcuds::AdcuEventGroupStructure>();
+    MspMapAdcuEventGroupStructureData(tmsg_ptr->data, &adcuEventGroupStructureObjTmp);
     PG_LOG(INFO) << "adcuEventGroupStructureObjTmp header.frame_id: " << std::dec << tmsg_ptr->data->header().frame_id()
       << " header.timestamp_ms: " << std::dec << tmsg_ptr->data->header().timestamp_ms()
-      << " adcuEventGroupStructureObjTmp size: " << std::dec << sizeof(CDR_AdcuEventGroupStructureTopic)
+      << " adcuEventGroupStructureObjTmp size: " << std::dec << sizeof(CDR_AdcuEventGroupStructure)
       << " cdr size_of_topic: " << size;
     PG_LOG(INFO) << "frame_id_last diff: " << std::dec << tmsg_ptr->data->header().frame_id() - frame_id_last;
     frame_id_last = tmsg_ptr->data->header().frame_id();

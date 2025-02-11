@@ -1,6 +1,6 @@
-std::vector<SocMsgPtr> MspVoyahIpcManager::IpcTransferFmmHmiOutputProcess(std::vector<MsgPayloadPtr> &pay_load_list, CommIdx idx) {
+std::vector<SocMsgPtr> MspVoyahIpcManager::IpcTransferLocalUpgradeResponseProcess(std::vector<MsgPayloadPtr> &pay_load_list, CommIdx idx) {
   static uint64_t frame_id_last = 0;
-  std::vector<SocMsgPtr> fmm_hmi_output_msg_list;
+  std::vector<SocMsgPtr> local_upgrade_response_msg_list;
 
   uint64_t cur_ts = phigent::phicyber::Time::Now().ToNanosecond();
   uint64_t mcu_latency = 0;
@@ -8,34 +8,34 @@ std::vector<SocMsgPtr> MspVoyahIpcManager::IpcTransferFmmHmiOutputProcess(std::v
   for (auto pay_load_ptr : pay_load_list) {
     uint8_t* p_data = pay_load_ptr->Addr();
 
-    memcpy(gPbBufferFmmHmiOutputData, p_data + sizeof(SocMcuPripCommHead), pay_load_ptr->Size() - sizeof(SocMcuPripCommHead));
+    memcpy(gPbBufferLocalUpgradeResponseData, p_data + sizeof(SocMcuPripCommHead), pay_load_ptr->Size() - sizeof(SocMcuPripCommHead));
     struct CDR_ucdrBuffer dec_stream = {0};
-    CDR_FmmHmiOutputTopic fmmHmiOutputObjTmp;
-    size_t size = CDR_FmmHmiOutputTopic_size_of_topic(&fmmHmiOutputObjTmp, 0);
-    if (size > FMM_HMI_OUTPUT_BUFFER_SIZE) {
-      PG_LOG(ERROR) << "fmmHmiOutputObjTmp size overflow, size is: " << size;
+    CDR_LocalUpgradeResponse localUpgradeResponseObjTmp;
+    size_t size = CDR_LocalUpgradeResponse_size_of_topic(&localUpgradeResponseObjTmp, 0);
+    if (size > LOCAL_UPGRADE_RESPONSE_BUFFER_SIZE) {
+      PG_LOG(ERROR) << "localUpgradeResponseObjTmp size overflow, size is: " << size;
       continue;
     }
-    ucdr_init_buffer_origin_offset_endian(&dec_stream, gPbBufferFmmHmiOutputData, size, 0, 0, UCDR_LITTLE_ENDIANNESS);
-    if(!CDR_FmmHmiOutputTopic_deserialize_topic(&dec_stream, &fmmHmiOutputObjTmp)) {
+    ucdr_init_buffer_origin_offset_endian(&dec_stream, gPbBufferLocalUpgradeResponseData, size, 0, 0, UCDR_LITTLE_ENDIANNESS);
+    if(!CDR_LocalUpgradeResponse_deserialize_topic(&dec_stream, &localUpgradeResponseObjTmp)) {
       PG_LOG(ERROR) << "pb_decode error!";
     }
 
-    auto tmsg_ptr = std::make_shared<phigent::TMessage<std::shared_ptr<krider::modemanager::FmmHmiOutputTopic>>>();
-    tmsg_ptr->data = std::make_shared<krider::modemanager::FmmHmiOutputTopic>();
-    MspMapFmmHmiOutputTopicData(tmsg_ptr->data, &fmmHmiOutputObjTmp);
-    PG_LOG(INFO) << "fmmHmiOutputObjTmp header.frame_id: " << std::dec << tmsg_ptr->data->header().frame_id()
+    auto tmsg_ptr = std::make_shared<phigent::TMessage<std::shared_ptr<krider::ipcuds::LocalUpgradeResponse>>>();
+    tmsg_ptr->data = std::make_shared<krider::ipcuds::LocalUpgradeResponse>();
+    MspMapLocalUpgradeResponseData(tmsg_ptr->data, &localUpgradeResponseObjTmp);
+    PG_LOG(INFO) << "localUpgradeResponseObjTmp header.frame_id: " << std::dec << tmsg_ptr->data->header().frame_id()
       << " header.timestamp_ms: " << std::dec << tmsg_ptr->data->header().timestamp_ms()
-      << " fmmHmiOutputObjTmp size: " << std::dec << sizeof(CDR_FmmHmiOutputTopic)
+      << " localUpgradeResponseObjTmp size: " << std::dec << sizeof(CDR_LocalUpgradeResponse)
       << " cdr size_of_topic: " << size;
     PG_LOG(INFO) << "frame_id_last diff: " << std::dec << tmsg_ptr->data->header().frame_id() - frame_id_last;
     frame_id_last = tmsg_ptr->data->header().frame_id();
-    mcu_latency = cur_ts / 1000000 - fmmHmiOutputObjTmp.header.sync_timestamp_ms;
-    PG_LOG(INFO) << "fmmHmiOutputObjTmp mcu_latency(ms): " << mcu_latency;
+    mcu_latency = cur_ts / 1000000 - localUpgradeResponseObjTmp.header.sync_timestamp_ms;
+    PG_LOG(INFO) << "localUpgradeResponseObjTmp mcu_latency(ms): " << mcu_latency;
 
-    SocMsgPtr fmm_hmi_output_msg_ptr = std::dynamic_pointer_cast<phigent::Message>(tmsg_ptr);
-    fmm_hmi_output_msg_list.push_back(fmm_hmi_output_msg_ptr);
+    SocMsgPtr local_upgrade_response_msg_ptr = std::dynamic_pointer_cast<phigent::Message>(tmsg_ptr);
+    local_upgrade_response_msg_list.push_back(local_upgrade_response_msg_ptr);
   }
 
-  return fmm_hmi_output_msg_list;
+  return local_upgrade_response_msg_list;
 }

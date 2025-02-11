@@ -11,10 +11,10 @@ outfile="output.txt"
 
 cp ${infile} ${tmpfile}
 
-sed -i "s/FmmHmiOutput/${idl_name}/g" ${tmpfile}
-sed -i "s/fmmHmiOutputObjTmp/${cdr_obj_name}/g" ${tmpfile}
-sed -i "s/FMM_HMI_OUTPUT_BUFFER_SIZE/${buffer_size}/g" ${tmpfile}
-sed -i "s/fmm_hmi_output/${ptr_prefix}/g" ${tmpfile}
+sed -i "s/LocalUpgradeResponse/${idl_name}/g" ${tmpfile}
+sed -i "s/localUpgradeResponseObjTmp/${cdr_obj_name}/g" ${tmpfile}
+sed -i "s/LOCAL_UPGRADE_RESPONSE_BUFFER_SIZE/${buffer_size}/g" ${tmpfile}
+sed -i "s/local_upgrade_response/${ptr_prefix}/g" ${tmpfile}
 
 mv ${tmpfile} ${outfile}
 
