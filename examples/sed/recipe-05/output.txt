@@ -1,0 +1,41 @@
+std::vector<SocMsgPtr> MspVoyahIpcManager::IpcTransferAdcuEventGroupStructureProcess(std::vector<MsgPayloadPtr> &pay_load_list, CommIdx idx) {
+  static uint64_t frame_id_last = 0;
+  std::vector<SocMsgPtr> adcu_event_group_msg_list;
+
+  uint64_t cur_ts = phigent::phicyber::Time::Now().ToNanosecond();
+  uint64_t mcu_latency = 0;
+
+  for (auto pay_load_ptr : pay_load_list) {
+    uint8_t* p_data = pay_load_ptr->Addr();
+
+    memcpy(gPbBufferAdcuEventGroupStructureData, p_data + sizeof(SocMcuPripCommHead), pay_load_ptr->Size() - sizeof(SocMcuPripCommHead));
+    struct CDR_ucdrBuffer dec_stream = {0};
+    CDR_AdcuEventGroupStructureTopic adcuEventGroupStructureObjTmp;
+    size_t size = CDR_AdcuEventGroupStructureTopic_size_of_topic(&adcuEventGroupStructureObjTmp, 0);
+    if (size > ADCU_EVENT_GROUP_STRUCTURE_BUFFER_SIZE) {
+      PG_LOG(ERROR) << "adcuEventGroupStructureObjTmp size overflow, size is: " << size;
+      continue;
+    }
+    ucdr_init_buffer_origin_offset_endian(&dec_stream, gPbBufferAdcuEventGroupStructureData, size, 0, 0, UCDR_LITTLE_ENDIANNESS);
+    if(!CDR_AdcuEventGroupStructureTopic_deserialize_topic(&dec_stream, &adcuEventGroupStructureObjTmp)) {
+      PG_LOG(ERROR) << "pb_decode error!";
+    }
+
+    auto tmsg_ptr = std::make_shared<phigent::TMessage<std::shared_ptr<krider::modemanager::AdcuEventGroupStructureTopic>>>();
+    tmsg_ptr->data = std::make_shared<krider::modemanager::AdcuEventGroupStructureTopic>();
+    MspMapAdcuEventGroupStructureTopicData(tmsg_ptr->data, &adcuEventGroupStructureObjTmp);
+    PG_LOG(INFO) << "adcuEventGroupStructureObjTmp header.frame_id: " << std::dec << tmsg_ptr->data->header().frame_id()
+      << " header.timestamp_ms: " << std::dec << tmsg_ptr->data->header().timestamp_ms()
+      << " adcuEventGroupStructureObjTmp size: " << std::dec << sizeof(CDR_AdcuEventGroupStructureTopic)
+      << " cdr size_of_topic: " << size;
+    PG_LOG(INFO) << "frame_id_last diff: " << std::dec << tmsg_ptr->data->header().frame_id() - frame_id_last;
+    frame_id_last = tmsg_ptr->data->header().frame_id();
+    mcu_latency = cur_ts / 1000000 - adcuEventGroupStructureObjTmp.header.sync_timestamp_ms;
+    PG_LOG(INFO) << "adcuEventGroupStructureObjTmp mcu_latency(ms): " << mcu_latency;
+
+    SocMsgPtr adcu_event_group_msg_ptr = std::dynamic_pointer_cast<phigent::Message>(tmsg_ptr);
+    adcu_event_group_msg_list.push_back(adcu_event_group_msg_ptr);
+  }
+
+  return adcu_event_group_msg_list;
+}
