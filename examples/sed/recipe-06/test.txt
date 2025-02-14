@@ -1,0 +1,54 @@
+std::vector<MsgPayloadPtr> MspVoyahIpcManager::IpcServiceSafetyFunctionOutputProcess(std::vector<SocMsgPtr> &msg_list, CommIdx idx) {
+  static uint8_t rollingcounter = 0;
+  static uint64_t frame_id_last = 0;
+  std::vector<MsgPayloadPtr> pay_load_list;
+
+  static uint64_t lastSafetyFunctionOutputTime = 0;
+  uint64_t cur_ts = phigent::phicyber::Time::Now().ToNanosecond();
+  if (lastSafetyFunctionOutputTime != 0 && cur_ts/1000000 - lastSafetyFunctionOutputTime < FLAGS_krider_mcu_service_safety_function_output_send_threshold) {
+    PG_LOG(ERROR) << "set mcu SafetyFunctionOutput intervel is too short,intervel :" << cur_ts/1000000 - lastSafetyFunctionOutputTime;
+    return pay_load_list;
+  }
+  lastSafetyFunctionOutputTime = cur_ts/1000000;
+  uint64_t dds_latency = 0;
+
+  for (auto msg_ptr : msg_list) {
+    auto tmsg_ptr = 
+      std::dynamic_pointer_cast<phigent::TMessage<std::shared_ptr<krider::safetyfunction::SafetyFunctionOutput>>>(msg_ptr);
+
+    CDR_SafetyFunctionOutput safetyFunctionOutputObj;
+    MspMapSafetyFunctionOutputData(&safetyFunctionOutputObj, tmsg_ptr->data);
+    PG_LOG(INFO) << "safetyFunctionOutputObj header.frame_id: " << std::dec << tmsg_ptr->data->header().frame_id()
+      << " header.timestamp_ms: " << std::dec << tmsg_ptr->data->header().timestamp_ms()
+      << " safetyFunctionOutputObj size: " << std::dec << sizeof(safetyFunctionOutputObj);
+    PG_LOG(INFO) << "frame_id_last diff: " << std::dec << tmsg_ptr->data->header().frame_id() - frame_id_last;
+    frame_id_last = tmsg_ptr->data->header().frame_id();
+
+    dds_latency = cur_ts / 1000000 - tmsg_ptr->data->header().sync_timestamp_ms();
+    PG_LOG(INFO) << "safetyFunctionOutputObj dds_latency(ms): " << dds_latency;
+
+    struct CDR_ucdrBuffer enc_stream = {0};
+    size_t size = CDR_SafetyFunctionOutput_size_of_topic(&safetyFunctionOutputObj, 0);
+    if (size > SAFETY_FUNCTION_OUTPUT_BUFFER_SIZE) {
+      PG_LOG(ERROR) << "safetyFunctionOutputObj size overflow, size is: " << size;
+      continue;
+    }
+    ucdr_init_buffer_origin_offset_endian(&enc_stream, gPbBufferSafetyFunctionOutputData, size, 0, 0, UCDR_LITTLE_ENDIANNESS);
+    if (!CDR_SafetyFunctionOutput_serialize_topic(&enc_stream, &safetyFunctionOutputObj)) {
+      PG_LOG(ERROR) << "pb_encode error!";
+    }
+
+    MsgPayloadPtr pay_load_ptr = nullptr;
+    rollingcounter++;
+    PG_LOG(INFO) << "IpcServiceSafetyFunctionOutputProcess is running: "  << "size: " << size << std::dec << (int)rollingcounter;
+
+    MspIpcPack(IC_PRIP_S2M_safety_function_output_IDX, gPbBufferSafetyFunctionOutputData, size, pay_load_ptr, rollingcounter);
+    if (gIsStartIpcService) {
+      pay_load_list.push_back(pay_load_ptr);
+    } else {
+      PG_LOG(WARN) << "gIsStartIpcService is false!";
+    }
+  }
+  
+  return pay_load_list;
+}

@@ -1,0 +1,54 @@
+std::vector<MsgPayloadPtr> MspVoyahIpcManager::IpcServicePKIResponseProcess(std::vector<SocMsgPtr> &msg_list, CommIdx idx) {
+  static uint8_t rollingcounter = 0;
+  static uint64_t frame_id_last = 0;
+  std::vector<MsgPayloadPtr> pay_load_list;
+
+  static uint64_t lastPKIResponseTime = 0;
+  uint64_t cur_ts = phigent::phicyber::Time::Now().ToNanosecond();
+  if (lastPKIResponseTime != 0 && cur_ts/1000000 - lastPKIResponseTime < FLAGS_krider_mcu_service_pki_response_send_threshold) {
+    PG_LOG(ERROR) << "set mcu PKIResponse intervel is too short,intervel :" << cur_ts/1000000 - lastPKIResponseTime;
+    return pay_load_list;
+  }
+  lastPKIResponseTime = cur_ts/1000000;
+  uint64_t dds_latency = 0;
+
+  for (auto msg_ptr : msg_list) {
+    auto tmsg_ptr = 
+      std::dynamic_pointer_cast<phigent::TMessage<std::shared_ptr<krider::safetyfunction::PKIResponse>>>(msg_ptr);
+
+    CDR_PKIResponse pKIResponseObj;
+    MspMapPKIResponseData(&pKIResponseObj, tmsg_ptr->data);
+    PG_LOG(INFO) << "pKIResponseObj header.frame_id: " << std::dec << tmsg_ptr->data->header().frame_id()
+      << " header.timestamp_ms: " << std::dec << tmsg_ptr->data->header().timestamp_ms()
+      << " pKIResponseObj size: " << std::dec << sizeof(pKIResponseObj);
+    PG_LOG(INFO) << "frame_id_last diff: " << std::dec << tmsg_ptr->data->header().frame_id() - frame_id_last;
+    frame_id_last = tmsg_ptr->data->header().frame_id();
+
+    dds_latency = cur_ts / 1000000 - tmsg_ptr->data->header().sync_timestamp_ms();
+    PG_LOG(INFO) << "pKIResponseObj dds_latency(ms): " << dds_latency;
+
+    struct CDR_ucdrBuffer enc_stream = {0};
+    size_t size = CDR_PKIResponse_size_of_topic(&pKIResponseObj, 0);
+    if (size > PKI_RESPONSE_BUFFER_SIZE) {
+      PG_LOG(ERROR) << "pKIResponseObj size overflow, size is: " << size;
+      continue;
+    }
+    ucdr_init_buffer_origin_offset_endian(&enc_stream, gPbBufferPKIResponseData, size, 0, 0, UCDR_LITTLE_ENDIANNESS);
+    if (!CDR_PKIResponse_serialize_topic(&enc_stream, &pKIResponseObj)) {
+      PG_LOG(ERROR) << "pb_encode error!";
+    }
+
+    MsgPayloadPtr pay_load_ptr = nullptr;
+    rollingcounter++;
+    PG_LOG(INFO) << "IpcServicePKIResponseProcess is running: "  << "size: " << size << std::dec << (int)rollingcounter;
+
+    MspIpcPack(IC_PRIP_S2M_PKI_response_topic_IDX, gPbBufferPKIResponseData, size, pay_load_ptr, rollingcounter);
+    if (gIsStartIpcService) {
+      pay_load_list.push_back(pay_load_ptr);
+    } else {
+      PG_LOG(WARN) << "gIsStartIpcService is false!";
+    }
+  }
+  
+  return pay_load_list;
+}
