@@ -2,18 +2,6 @@
 
 ## Table of contents
 
-### [Bash概览](getting_started)
-- [第一个shell脚本](getting_started/hello_world)
-- [变量](getting_started/variables)
-- [字符串](getting_started/strings)
-- [数组](getting_started/arrays)
-- [传递参数](getting_started/arguments)
-- [运算符](getting_started/operators)
-- [echo命令](getting_started/echo_command)
-- [printf命令](getting_started/printf_command)
-- [输入/输出重定向](getting_started/input_output_redirection)
-- [流程控制](getting_started/flow_control)
-
 
 ### [构建基础脚本](basic_script_building)
 - [创建 shell 脚本文件](basic_script_building/creating_a_script_file)
@@ -61,6 +49,8 @@
 - [if-then 的高级特性](using_structured_commands/advanced_if_then_features)
 - [case命令](using_structured_commands/case_command)
 
+### [更多的结构化命令](more_structured_commands)
+- [for命令](for_command)
 
 ### [流程控制：循环语句](flow_control_using_loops)
 - [for命令](flow_control_using_loops/for_command)
