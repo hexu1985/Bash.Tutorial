@@ -1,3 +1,35 @@
-    local_pose_ptr->linear_velocity_std().x() = 1;
-    local_pose_ptr->linear_velocity_std().y() = 1;
-    local_pose_ptr->linear_velocity_std().z() = 1;
+    for(int i=0;i<10; i++)
+    {
+    safety_function_output_ptr->passable_info().straight_tfl_info().traffic_light_ids()[i] = 1;
+    }
+
+    safety_function_output_ptr->passable_info().left_tfl_info().shape() = 1;
+    safety_function_output_ptr->passable_info().left_tfl_info().status() = 1;
+    safety_function_output_ptr->passable_info().left_tfl_info().countdown() = 1;
+    safety_function_output_ptr->passable_info().left_tfl_info().shape_confidence() = 1;
+    safety_function_output_ptr->passable_info().left_tfl_info().status_confidence() = 1;
+    safety_function_output_ptr->passable_info().left_tfl_info().countdown_confidence() = 1;
+    for(int i=0;i<10; i++)
+    {
+    safety_function_output_ptr->passable_info().left_tfl_info().traffic_light_ids()[i] = 1;
+    }
+    safety_function_output_ptr->passable_info().right_tfl_info().shape() = 1;
+    safety_function_output_ptr->passable_info().right_tfl_info().status() = 1;
+    safety_function_output_ptr->passable_info().right_tfl_info().countdown() = 1;
+    safety_function_output_ptr->passable_info().right_tfl_info().shape_confidence() = 1;
+    safety_function_output_ptr->passable_info().right_tfl_info().status_confidence() = 1;
+    safety_function_output_ptr->passable_info().right_tfl_info().countdown_confidence() = 1;
+    for(int i=0;i<10; i++)
+    {
+    safety_function_output_ptr->passable_info().right_tfl_info().traffic_light_ids()[i] = 1;
+    }
+    safety_function_output_ptr->passable_info().uturn_tfl_info().shape() = 1;
+    safety_function_output_ptr->passable_info().uturn_tfl_info().status() = 1;
+    safety_function_output_ptr->passable_info().uturn_tfl_info().countdown() = 1;
+    safety_function_output_ptr->passable_info().uturn_tfl_info().shape_confidence() = 1;
+    safety_function_output_ptr->passable_info().uturn_tfl_info().status_confidence() = 1;
+    safety_function_output_ptr->passable_info().uturn_tfl_info().countdown_confidence() = 1;
+    for(int i=0;i<10; i++)
+    {
+    safety_function_output_ptr->passable_info().uturn_tfl_info().traffic_light_ids()[i] = 1;
+    }
