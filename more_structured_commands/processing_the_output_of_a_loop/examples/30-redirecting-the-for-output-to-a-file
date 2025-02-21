@@ -1,9 +1,4 @@
 #!/bin/bash
-#=======================
-# Author : Ali Moradzade
-# Created: 2021/12/31
-#=======================
-
 # redirecting the for output to a file
 
 file=test.txt

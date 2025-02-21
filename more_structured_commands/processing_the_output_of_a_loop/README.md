@@ -39,7 +39,7 @@ echo "The command is finished."
 执行脚本，输出结果如下所示：
 
 ```shell
-$ ./test23
+$ ./30-redirecting-the-for-output-to-a-file
 Writing to test.txt ...
 The command is finished.
 $ cat test.txt
@@ -74,7 +74,7 @@ echo "This completes our travels"
 执行脚本，输出结果如下所示：
 
 ```shell
-$ ./test24
+$ ./31-piping-a-loop-to-another-command
 Alabama is the next place to go
 Connecticut is the next place to go
 Illinois is the next place to go
@@ -88,6 +88,7 @@ for 命令的输出通过管道传给了 sort 命令，由后者对输出结果�
 
 
 ### 参考资料:
-- 《Linux Command Line and Shell Scripting Bible》: Chapter 13: More Structured Commands
+- 《Linux命令行与shell脚本编程大全（第4版）》: 13.8 处理循环的输出
+
 
 

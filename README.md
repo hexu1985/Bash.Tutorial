@@ -56,15 +56,7 @@
 - [until命令](more_structured_commands/until_command)
 - [break命令](more_structured_commands/break_command)
 - [continue命令](more_structured_commands/continue_command)
-
-
-### [流程控制：循环语句](flow_control_using_loops)
-- [for命令](flow_control_using_loops/for_command)
-- [while命令](flow_control_using_loops/while_command)
-- [until命令](flow_control_using_loops/until_command)
-- [break命令](flow_control_using_loops/break_command)
-- [continue命令](flow_control_using_loops/continue_command)
-- [处理循环的输出](flow_control_using_loops/processing_the_output_of_a_loop)
+- [处理循环的输出](more_structured_commands/processing_the_output_of_a_loop)
 
 
 ### [创建函数](creating_functions)
