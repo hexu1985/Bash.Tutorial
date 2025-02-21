@@ -66,10 +66,6 @@
 - [在函数中处理变量](creating_functions/handling_variables_in_a_function)
 
 
-### [进程管理](managing_processes)
-- [结束进程](managing_processes/stopping_processes)
-
-
 ### [命令的使用](working_with_commands)
 - [命令的种类](working_with_commands/kinds_of_commands)
 - [识别命令](working_with_commands/identifying_commands)
