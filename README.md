@@ -66,8 +66,4 @@
 - [在函数中处理变量](creating_functions/handling_variables_in_a_function)
 
 
-### [命令的使用](working_with_commands)
-- [命令的种类](working_with_commands/kinds_of_commands)
-- [识别命令](working_with_commands/identifying_commands)
-- [获得命令文档](working_with_commands/getting_command_documentation)
 
