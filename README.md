@@ -59,6 +59,10 @@
 - [处理循环的输出](more_structured_commands/processing_the_output_of_a_loop)
 
 
+### [位置参数](positional_parameters)
+- [传递参数](positional_parameters/passing_parameters)
+
+
 ### [创建函数](creating_functions)
 - [脚本函数基础](creating_functions/basic_script_functions)
 - [函数返回值](creating_functions/returning_value_from_function)
