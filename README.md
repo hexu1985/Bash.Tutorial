@@ -62,6 +62,7 @@
 ### [位置参数](positional_parameters)
 - [传递参数](positional_parameters/passing_parameters)
 - [参数统计](positional_parameters/counting_parameters)
+- [获取所有的参数](positional_parameters/grabbing_all_parameters)
 
 
 ### [创建函数](creating_functions)
