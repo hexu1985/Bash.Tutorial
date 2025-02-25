@@ -24,14 +24,15 @@ echo "The exit status is: $?"
 
 执行脚本，输出结果如下所示：
 
-```
+```bash
+$ ./script04-testing-the-exit-status-of-a-function
 testing the function:
 trying to display a non-existent file
-ls: 无法访问'badfile': 没有那个文件或目录
+ls: 无法访问 'badfile': 没有那个文件或目录
 The exit status is: 2
 ```
 
-该函数的退出状态码是 1，因为函数中的最后一个命令执行失败了。
+该函数的退出状态码是 2，因为函数中的最后一个命令执行失败了。
 但你无法知道该函数中的其他命令是否执行成功。来看下面的例子：
 
 ```bash
@@ -50,9 +51,10 @@ echo "The exit status is: $?"
 
 执行脚本，输出结果如下所示：
 
-```
+```bash
+$ ./script05-testing-the-exit-status-of-a-function-no-way-to-know
 testing the function:
-ls: 无法访问'badfile': 没有那个文件或目录
+ls: 无法访问 'badfile': 没有那个文件或目录
 trying to display a non-existent file
 The exit status is: 0
 ```
@@ -82,16 +84,16 @@ echo "The new value is $?"
 
 执行脚本，输出结果如下所示：
 
-```
-$ bash test.sh
-Enter a value: 12
+```bash
+$ ./script06-using-the-return-command-in-a-function
+Enter a value: 4
 doubling the value
-The new value is 24
-$
+The new value is 8
 ```
 
 dbl 函数会将 `$value` 变量中用户输入的整数值翻倍，然后用 return 命令返回结果。
 脚本用 `$? ` 变量显示出该结果。
+
 当用这种方法从函数中返回值时，一定要小心。为了避免出问题，牢记以下两个技巧。
 - 函数执行一结束就立刻读取返回值。
 - 退出状态码必须介于 0~255。
@@ -102,12 +104,11 @@ dbl 函数会将 `$value` 变量中用户输入的整数值翻倍，然后用 re
 第二个技巧界定了返回值的取值范围。由于退出状态码必须小于 256，
 因此函数结果也必须为一个小于 256 的整数值。大于 255 的任何数值都会产生错误的值：
 
-```
-$ bash test.sh
+```bash
+$ ./script06-using-the-return-command-in-a-function
 Enter a value: 200
 doubling the value
 The new value is 144
-$
 ```
 
 如果需要返回较大的整数值或字符串，就不能使用 return 方法。
@@ -117,7 +118,7 @@ $
 
 正如可以将命令的输出保存到 shell 变量中一样，也可以将函数的输出保存到 shell 变量中：
 
-```
+```bash
 result=$(dbl)
 ```
 
@@ -138,18 +139,19 @@ echo "The new value is $result"
 
 执行脚本，输出结果如下所示：
 
-```
-$ bash test.sh
+```bash
+$ ./script07-using-the-echo-to-return-a-value
 Enter a value: 200
 The new value is 400
-$ bash test.sh
+$
+$ ./script07-using-the-echo-to-return-a-value
 Enter a value: 1000
 The new value is 2000
-$
 ```
 
 新函数会用 echo 语句来显示计算结果。
 该脚本会获取 dbl 函数的输出，而不是查看退出状态码。
+
 这个例子演示了一个不易察觉的技巧。注意，dbl 函数实际上输出了两条消息。
 read 命令输出了一条简短的消息来向用户询问输入值。
 bash shell 脚本非常聪明，并不将其作为 STDOUT 输出的一部分，而是直接将其忽略。
