@@ -35,26 +35,27 @@ name() {
 
 ```bash
 #!/bin/bash
-
 # using a function in a script
 
 function func1 {
-	echo "This is an example of a function"
+    echo "This is an example of a function"
 }
 
-for ((count = 1; count <= 5; count++))
+count=1
+while [ $count -le 5 ]
 do
-	func1
+    func1
+    count=$[ $count + 1 ]
 done
-
 echo "This is the end of the loop"
 func1
-echo "Now this is tne end of the script"
+echo "Now this is the end of the script"
 ```
 
 执行脚本，输出结果如下所示：
 
 ```
+$ ./script01-using-a-function-in-a-script
 This is an example of a function
 This is an example of a function
 This is an example of a function
@@ -65,19 +66,83 @@ This is an example of a function
 Now this is tne end of the script
 ```
 
-**删除函数**
+每次引用函数名 func1 时，bash shell 会找到 func1 函数的定义并执行在其中定义的命令。
+函数定义不一定非要放在 shell 脚本的最开始部分，但是要注意这种情况。
+如果试图在函数被定义之前调用它，则会收到一条错误消息：
 
-可以使用 `unset -f` 删除函数：
+```bash
+#!/bin/bash
+# using a function located in the middle of a script
 
-```
-who_is_on ( ) {                             # Define a function
-    who | awk '{ print $1 }' | sort -u      # Generate sorted list of users
+count=1
+echo "This line comes before the function definition"
+
+function func1 {
+	echo "This is an example of a function"
 }
-...
-unset -f who_is_on                          # Remove the function
+
+while [ $count -le 5 ]
+do
+	func1
+	count=$[ $count + 1 ]
+done
+echo "This is the end of the loop"
+func2
+echo "Now this is the end of the script"
+
+function func2 {
+	echo "This is an example of a function"
+}
 ```
+
+执行脚本，输出结果如下所示：
+
+```bash
+$ ./script02-using-a-function-located-in-the-middle-of-a-script
+This line comes before the function definition
+This is an example of a function
+This is an example of a function
+This is an example of a function
+This is an example of a function
+This is an example of a function
+This is the end of the loop
+./script02-using-a-function-located-in-the-middle-of-a-script: 行 17: func2：未找到命令
+Now this is the end of the script
+```
+
+脚本试图在 func2 函数被定义之前就调用该函数。由于 func2 函数此时尚未定义，因此在调用 func2 时，产生了一条错误消息。
+
+另外也要注意函数名。记住，函数名必须是唯一的，否则就会出问题。如果定义了同名函数，
+那么新定义就会覆盖函数原先的定义，而这一切不会有任何错误消息：
+
+```bash
+#!/bin/bash
+# testing using a duplicate function name
+
+function func1 {
+	echo "This is the first definition of the function name"
+}
+
+func1
+
+function func1 {
+	echo "This is a repeat of the same function name"
+}
+
+func1
+echo "This is the end of the script"
+```
+
+执行脚本，输出结果如下所示：
+
+```bash
+$ ./script03-testing-using-a-duplicate-function-name
+This is the first definition of the function name
+This is a repeat of the same function name
+This is the end of the script
+```
+
+func1 函数最初的定义工作正常，但重新定义该函数后，后续的函数调用会使用第二个定义。
 
 ### 参考资料:
 - 《Linux命令行与shell脚本编程大全（第4版）》: 17.1 脚本函数基础
-- 《Shell脚本学习指南》: 6.1.1 变量赋值与环境
-
