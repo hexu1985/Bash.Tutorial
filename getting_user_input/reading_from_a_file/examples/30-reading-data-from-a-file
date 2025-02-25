@@ -1,0 +1,12 @@
+#!/bin/bash
+# Using the read command to read a file
+#
+count=1
+current_file_dir=$( cd $(dirname ${BASH_SOURCE[0]}) && pwd )
+cat ${current_file_dir}/test.txt | while read line
+do
+    echo "Line $count: $line"
+    count=$[ $count + 1 ]
+done
+echo "Finished processing the file."
+exit
