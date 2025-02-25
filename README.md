@@ -68,6 +68,10 @@
 - [getopts命令](positional_parameters/getopts_command)
 
 
+### [获取用户输入](getting_user_input)
+- [read命令](getting_user_input/read_command)
+
+
 ### [创建函数](creating_functions)
 - [脚本函数基础](creating_functions/basic_script_functions)
 - [函数返回值](creating_functions/returning_value_from_function)
