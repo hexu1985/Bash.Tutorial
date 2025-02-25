@@ -81,6 +81,7 @@
 - [向函数传递参数](creating_functions/passing_parameters_to_a_function)
 - [在函数中处理变量](creating_functions/handling_variables_in_a_function)
 - [向函数传递数组](creating_functions/passing_arrays_to_functions)
+- [从函数返回数组](creating_functions/returning_arrays_from_functions)
 
 
 
