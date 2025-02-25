@@ -64,6 +64,7 @@
 - [参数统计](positional_parameters/counting_parameters)
 - [获取所有的参数](positional_parameters/grabbing_all_parameters)
 - [shift命令](positional_parameters/shift_command)
+- [处理选项](positional_parameters/working_with_options)
 
 
 ### [创建函数](creating_functions)
