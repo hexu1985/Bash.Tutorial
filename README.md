@@ -71,6 +71,7 @@
 ### [获取用户输入](getting_user_input)
 - [read命令](getting_user_input/read_command)
 - [输入超时](getting_user_input/timing_out)
+- [无显示读取](getting_user_input/reading_with_no_display)
 
 
 ### [创建函数](creating_functions)
