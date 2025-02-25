@@ -5,4 +5,5 @@
 - [获取所有的参数](grabbing_all_parameters)
 - [shift命令](shift_command)
 - [处理选项](working_with_options)
+- [getopts命令](getopts_command)
 
