@@ -83,6 +83,7 @@
 - [向函数传递数组](creating_functions/passing_arrays_to_functions)
 - [从函数返回数组](creating_functions/returning_arrays_from_functions)
 - [函数递归](creating_functions/recursive_function)
+- [创建库](creating_functions/creating_a_library)
 
 
 
