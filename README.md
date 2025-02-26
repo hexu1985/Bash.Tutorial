@@ -75,6 +75,10 @@
 - [从文件中读取输入](getting_user_input/reading_from_a_file)
 
 
+### [重定向](redirection)
+- [标准输出重定向](redirection/redirecting_standard_output)
+
+
 ### [创建函数](creating_functions)
 - [脚本函数基础](creating_functions/basic_script_functions)
 - [函数返回值](creating_functions/returning_value_from_function)
@@ -84,6 +88,4 @@
 - [从函数返回数组](creating_functions/returning_arrays_from_functions)
 - [函数递归](creating_functions/recursive_function)
 - [创建库](creating_functions/creating_a_library)
-
-
 
