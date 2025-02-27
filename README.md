@@ -77,6 +77,7 @@
 
 ### [重定向](redirection)
 - [标准输出重定向](redirection/redirecting_standard_output)
+- [标准错误重定向](redirection/redirecting_standard_error)
 
 
 ### [创建函数](creating_functions)
