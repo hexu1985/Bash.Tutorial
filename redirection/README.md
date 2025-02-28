@@ -5,4 +5,5 @@
 - [标准输入重定向](redirecting_standard_input)
 - [在脚本中重定向输出](redirecting_output_in_scripts)
 - [在脚本中重定向输入](redirecting_input_in_scripts)
+- [创建自己的重定向](creating_your_own_redirection)
 

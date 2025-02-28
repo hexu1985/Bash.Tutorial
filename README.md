@@ -81,6 +81,7 @@
 - [标准输入重定向](redirection/redirecting_standard_input)
 - [在脚本中重定向输出](redirection/redirecting_output_in_scripts)
 - [在脚本中重定向输入](redirection/redirecting_input_in_scripts)
+- [创建自己的重定向](redirection/creating_your_own_redirection)
 
 
 ### [创建函数](creating_functions)
