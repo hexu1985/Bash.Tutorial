@@ -94,3 +94,7 @@
 - [函数递归](creating_functions/recursive_function)
 - [创建库](creating_functions/creating_a_library)
 
+
+### [文本处理](text_processing)
+- [使用 sed 替换文本](text_processing/sed_command)
+
