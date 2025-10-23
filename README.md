@@ -95,6 +95,6 @@
 - [创建库](creating_functions/creating_a_library)
 
 
-### [文本处理](text_processing)
-- [使用 sed 替换文本](text_processing/sed_command)
+### [文本处理](text_manipulation)
+- [使用 sed 替换文本](text_manipulation/sed_command)
 
