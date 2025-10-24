@@ -8,7 +8,7 @@ cut命令可以按列，而不是按行来切分文件。
 cut命令能够提取指定位置或列之间的字符。你可以指定每列的分隔符。在cut的术语中，每列被称为一个字段。
 
 
-##### 1. 选项`-f`可以指定要提取的字段：
+(1) 选项`-f`可以指定要提取的字段：
 
 ```bash
 cut -f FIELD_LIST filename
@@ -22,7 +22,7 @@ $ cut -f 2,3 filename
 
 该命令将显示第2列和第3列。
 
-##### 2. cut命令也能够从stdin中读取输入。
+(2) cut命令也能够从stdin中读取输入。
 
 制表符是字段默认的分隔符。对于没有使用分隔符的行，会将该行照原样打印出来。
 cut 的选项`-s`可以禁止打印出这种行。
@@ -40,3 +40,40 @@ No
 2
 3
 ```
+
+(3) 要想提取多个字段，就得给出由逗号分隔的多个字段编号：
+
+```bash
+$ cut -f2,4 student_data.txt
+Name    Percent
+Sarath  90
+Alex    98
+Anu     90
+```
+
+(4) 我们也可以用 `--complement`选项显示出没有被`-f`指定的那些字段。
+下面的命令会打印出除第3列之外的所有列：
+
+```bash
+$ cut -f3 --complement student_data.txt
+No      Name    Percent
+1       Sarath  90
+2       Alex    98
+3       Anu     90
+```
+
+(5) 选项`-d`能够设置分隔符。下面的命令展示了如何使用cut处理由分号分隔的字段：
+
+```bash
+$ cat delimited_data.txt
+No;Name;Mark;Percent
+1;Sarath;45;90
+2;Alex;49;98
+3;Anu;45;90
+$ cut -f2 -d";" delimited_data.txt
+Name
+Sarath
+Alex
+Anu
+```
+
