@@ -101,3 +101,6 @@
 
 
 ### [文件归档](archiving_files)
+- [使用 tar 归档](archiving_files/tar_command)
+- [使用 zip 归档及压缩](archiving_files/zip_command)
+
