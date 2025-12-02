@@ -77,3 +77,73 @@ Alex
 Anu
 ```
 
+#### 补充内容
+
+cut命令还有其他一些选项可以指定要显示的列。
+
+**指定字段的字符或字节范围**
+
+固定列宽的报表在列与列之间都存在数量不等的空格。
+你没法根据字段的位置来提取值，但是可以根据字符位置提取。
+cut命令可以根据字节或者字符来指定选择范围。
+
+输入每一个字符的提取位置就说不过去了，因此除了逗号分隔的列表，cut可以接受下表中列出的记法。
+
+| 记法 | 说明 |
+| ---- | ---- |
+| N-   | 从第N个字节、字符或字段开始到行尾 |
+| N-M  | 从第N个字节、字符或字段开始到第M个（包括第M个在内）字节、字符或字段 |
+| -M   | 从第1个字节、字符或字段开始到第M个（包括第M个在内）字节、字符或字段 |
+
+
+我们使用上面介绍的记法，结合下列选项将字段指定为某个范围内的字节、字符或字段：
+- `-b` 表示字节
+- `-c` 表示字符
+- `-f` 用于定义字段
+
+例如：
+
+```bash
+$ cat range_fields.txt
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxy
+```
+
+你可以打印第2个到第5个字符：
+
+```bash
+$ cut -c2-5 range_fields.txt
+bcde
+bcde
+bcde
+bcde
+```
+
+打印前2个字符：
+
+```bash
+$ cut -c -2 range_fields.txt
+ab
+ab
+ab
+ab
+```
+
+若要用字节作为计数单位，可以将`-c`替换成`-b`。
+
+选项`--output-delimiter`可以指定输出分隔符。
+在显示多组数据时，该选项尤为有用：
+
+```bash
+$ cut range_fields.txt -c1-3,6-9 --output-delimiter ","
+abc,fghi
+abc,fghi
+abc,fghi
+abc,fghi
+```
+
+### 参考资料:
+- 《Linux Shell脚本攻略（第3版）》: 4.4 使用 cut 按列切分文件
+

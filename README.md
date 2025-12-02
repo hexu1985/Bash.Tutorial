@@ -97,4 +97,7 @@
 
 ### [文本处理](text_manipulation)
 - [使用 sed 替换文本](text_manipulation/sed_command)
+- [使用 cut 按列切分文件](text_manipulation/cut_command)
 
+
+### [文件归档](archiving_files)
