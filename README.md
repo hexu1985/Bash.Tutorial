@@ -107,3 +107,4 @@
 
 ### [系统资源](system_resource)
 - [使用 ps 报告当前系统进程状态](system_resource/ps_command)
+- [使用 top 实时监控系统进程状态](system_resource/top_command)
